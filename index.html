@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayan Shahid - Full Stack Developer</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <i class="fas fa-moon" id="themeIcon"></i>
+    </button>
+
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <nav id="nav">
+        <div class="flex justify-between items-center">
+            <div class="text-xl font-bold">Portfolio</div>
+            <div class="hidden md:flex gap-8 items-center">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#contact" class="nav-link">Contact</a>
+
+                <!-- Theme Toggle in Nav -->
+                <button class="theme-toggle-nav" id="themeToggleNav" aria-label="Toggle theme"
+                    style="position: relative; width: 40px; height: 40px; background: var(--card-bg); border: 2px solid var(--border-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.3s ease; margin-left: 1rem;">
+                    <i class="fas fa-moon" id="themeIconNav" style="font-size: 1rem; color: var(--text-primary);"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Ayan Shahid<br>Full Stack Developer</h1>
+            <p>Specialized in creating responsive, user-friendly websites with clean code and modern design
+                principles.Crafting beautiful digital experience.Building scalable web applications with modern
+                technologies</p>
+            <a href="#projects" class="cta-btn">View My Work</a>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <h2 class="section-title">Expertise</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <div class="skill-icon" style="color: #E34F26;">
+                    <i class="fab fa-html5 fa-beat-fade"></i>
+                </div>
+                <div class="skill-name">HTML5</div>
+                <div class="skill-level">Advanced</div>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon" style="color: #1572B6;">
+                    <i class="fab fa-css3-alt fa-beat-fade"></i>
+                </div>
+                <div class="skill-name">CSS3</div>
+                <div class="skill-level">Advanced</div>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon" style="color: #F7DF1E;">
+                    <i class="fab fa-js fa-beat-fade"></i>
+                </div>
+                <div class="skill-name">JavaScript</div>
+                <div class="skill-level">Intermediate</div>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon" style="color: #38B2AC;">
+                    <i class="fas fa-wind fa-beat-fade"></i>
+                </div>
+                <div class="skill-name">Tailwind CSS</div>
+                <div class="skill-level">Advanced</div>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon" style="color: #7952B3;">
+                    <i class="fab fa-bootstrap fa-beat-fade"></i>
+                </div>
+                <div class="skill-name">Bootstrap</div>
+                <div class="skill-level">Advanced</div>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon" style="color: #FF6B6B;">
+                    <i class="fas fa-mobile-alt fa-beat-fade"></i>
+                </div>
+                <div class="skill-name">Responsive Design</div>
+                <div class="skill-level">Advanced</div>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon" style="color: #F05032;">
+                    <i class="fab fa-git-alt fa-beat-fade"></i>
+                </div>
+                <div class="skill-name">Git</div>
+                <div class="skill-level">Intermediate</div>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon" style="color: #ab9e12;">
+                    <i class="fa-brands fa-square-github fa-beat-fade"></i>
+                </div>
+                <div class="skill-name">GitHub</div>
+                <div class="skill-level">Advanced</div>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon" style="color: #06B6D4;">
+                    <i class="fas fa-code fa-beat-fade"></i>
+                </div>
+                <div class="skill-name">VS Code</div>
+                <div class="skill-level">Advanced</div>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon" style="color: #FF9800;">
+                    <i class="fab fa-figma fa-beat-fade"></i>
+                </div>
+                <div class="skill-name">Figma</div>
+                <div class="skill-level">Beginner</div>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon" style="color: #00C7B7;">
+                    <i class="fas fa-globe fa-beat-fade"></i>
+                </div>
+                <div class="skill-name">Netlify</div>
+                <div class="skill-level">Intermediate</div>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon" style="color: #FF6B9D;">
+                    <i class="fas fa-pencil-ruler fa-beat-fade"></i>
+                </div>
+                <div class="skill-name">UI/UX Design</div>
+                <div class="skill-level">Intermediate</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="skills-section" style="background: var(--bg-secondary);">
+        <h2 class="section-title">Services I Offer</h2>
+        <p
+            style="text-align: center; color: var(--text-secondary); font-size: 1.15rem; max-width: 700px; margin: -2rem auto 3rem;">
+            Comprehensive solutions tailored to your needs
+        </p>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-globe"></i>
+                </div>
+                <h3 class="service-title">Website Development</h3>
+                <p class="service-description">Development of responsive and interactive websites for individuals,
+                    businesses, or organizations using HTML5, CSS3, JavaScript, and Bootstrap. Ensures mobile-friendly
+                    and optimized performance across all devices.</p>
+                <!-- </div> -->
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <h3 class="service-title">Frontend Development</h3>
+                <p class="service-description">Specialized in building intuitive user interfaces (UIs) and seamless user
+                    experiences (UX) with HTML5, CSS3, JavaScript, and React.js. Delivers fast, responsive single-page
+                    applications (SPAs).</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h3 class="service-title">Custom Web Applications</h3>
+                <p class="service-description">Creation of custom web applications using React.js with backend
+                    technologies like Node.js and Express.js. Integrates Firebase for real-time data, authentication,
+                    and hosting.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-server"></i>
+                </div>
+                <h3 class="service-title">Web Hosting and Deployment</h3>
+                <p class="service-description">Assistance in deploying websites and web applications on platforms like
+                    Firebase Hosting, Netlify, or traditional servers. Optimizes performance and ensures secure HTTPS
+                    connections.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-cog"></i>
+                </div>
+                <h3 class="service-title">Maintenance and Updates</h3>
+                <p class="service-description">Ongoing maintenance services, including security patches, performance
+                    optimizations, and feature updates. Provides backups and uptime monitoring for your web
+                    applications.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <h3 class="service-title">Responsive Design Audits</h3>
+                <p class="service-description">Evaluation of existing websites for responsiveness across devices and
+                    browsers. Implementation of improvements using CSS3 media queries and modern design principles.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-mobile"></i>
+                </div>
+                <h3 class="service-title">Mobile App Development</h3>
+                <p class="service-description">Building cross-platform mobile applications using modern frameworks and
+                    technologies. Focus on creating smooth, native-like experiences for both iOS and Android platforms.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+                <h3 class="service-title">E-commerce Solutions</h3>
+                <p class="service-description">Development of complete e-commerce websites with product catalogs,
+                    shopping carts, payment integration, and order management systems. Secure and scalable solutions for
+                    online businesses.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects-section">
+        <h2 class="section-title">Featured Projects</h2>
+        <p
+            style="text-align: center; color: var(--text-secondary); font-size: 1.15rem; max-width: 700px; margin: -2rem auto 3rem;">
+            A selection of my recent work and personal projects
+        </p>
+
+        <!-- Web Agency -->
+        <div class="project-card">
+            <div class="project-image">
+                <div
+                    style="width: 100%; height: 100%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center;">
+                    <i class="fas fa-briefcase" style="font-size: 120px; opacity: 0.3;"></i>
+                </div>
+                <div class="project-overlay">
+                    <span class="project-label">Business Website</span>
+                    <h3 class="project-title">Web Agency</h3>
+                    <p class="project-description">Professional web agency website with hero section, services showcase,
+                        portfolio gallery, testimonials, and contact form. Fully responsive design.</p>
+                    <div class="project-tags">
+                        <span class="tag">HTML5</span>
+                        <span class="tag">CSS3</span>
+                        <span class="tag">Bootstrap</span>
+                        <span class="tag">Tailwind CSS</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="http://webagency-template.netlify.app/" target="_blank" class="project-link">
+                            <i class="fas fa-external-link-alt"></i>
+                            <span>Live Demo</span>
+                        </a>
+                        <a href="https://github.com/AyanQureshi16/Webagency-Template-Assignment-8" target="_blank"
+                            class="project-link">
+                            <i class="fab fa-github"></i>
+                            <span>Source Code</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Toyota Clone -->
+        <div class="project-card">
+            <div class="project-image">
+                <div
+                    style="width: 100%; height: 100%; background: linear-gradient(135deg, #CC0000 0%, #000000 100%); display: flex; align-items: center; justify-content: center;">
+                    <i class="fas fa-car" style="font-size: 120px; opacity: 0.3;"></i>
+                </div>
+                <div class="project-overlay">
+                    <span class="project-label">Automotive Website</span>
+                    <h3 class="project-title">Toyota Pakistan Clone</h3>
+                    <p class="project-description">Complete automotive website clone featuring image carousels, product
+                        cards, news section, and comprehensive footer. Bootstrap integration with custom styling.</p>
+                    <div class="project-tags">
+                        <span class="tag">HTML5</span>
+                        <span class="tag">CSS3</span>
+                        <span class="tag">Bootstrap 5</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://toyota-website-assignment-6.netlify.app/" target="_blank" class="project-link">
+                            <i class="fas fa-external-link-alt"></i>
+                            <span>Live Demo</span>
+                        </a>
+                        <a href="https://github.com/AyanQureshi16/Toyota-Website-Assignment-6" target="_blank"
+                            class="project-link">
+                            <i class="fab fa-github"></i>
+                            <span>Source Code</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Watch Store -->
+        <div class="project-card">
+            <div class="project-image">
+                <div
+                    style="width: 100%; height: 100%; background: linear-gradient(135deg, #2C3E50 0%, #3498DB 100%); display: flex; align-items: center; justify-content: center;">
+                    <i class="fas fa-clock" style="font-size: 120px; opacity: 0.3;"></i>
+                </div>
+                <div class="project-overlay">
+                    <span class="project-label">E-Commerce Store</span>
+                    <h3 class="project-title">Nizam Watch House</h3>
+                    <p class="project-description">Elegant e-commerce website for luxury watches featuring hero section,
+                        product showcase, about section, and contact footer with Bootstrap framework.</p>
+                    <div class="project-tags">
+                        <span class="tag">HTML5</span>
+                        <span class="tag">CSS3</span>
+                        <span class="tag">Bootstrap 5</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://nizam-watch-house-assignment-5.netlify.app/" target="_blank"
+                            class="project-link">
+                            <i class="fas fa-external-link-alt"></i>
+                            <span>Live Demo</span>
+                        </a>
+                        <a href="https://github.com/AyanQureshi16/Nizam-Watch-House-Assignment-5" target="_blank"
+                            class="project-link">
+                            <i class="fab fa-github"></i>
+                            <span>Source Code</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Login System -->
+        <div class="project-card">
+            <div class="project-image">
+                <div
+                    style="width: 100%; height: 100%; background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #d946ef 100%); display: flex; align-items: center; justify-content: center;">
+                    <i class="fas fa-lock" style="font-size: 120px; opacity: 0.3;"></i>
+                </div>
+                <div class="project-overlay">
+                    <span class="project-label">Authentication System</span>
+                    <h3 class="project-title">Login/Signup System</h3>
+                    <p class="project-description">Complete authentication system with login, signup, and protected
+                        pages. Features localStorage integration and modern gradient UI design.</p>
+                    <div class="project-tags">
+                        <span class="tag">HTML5</span>
+                        <span class="tag">CSS3</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">LocalStorage</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://ayanqureshi16.github.io/Login-Signup-Page/" target="_blank"
+                            class="project-link">
+                            <i class="fas fa-external-link-alt"></i>
+                            <span>Live Demo</span>
+                        </a>
+                        <a href="https://github.com/AyanQureshi16/Login-Signup-Page" target="_blank"
+                            class="project-link">
+                            <i class="fab fa-github"></i>
+                            <span>Source Code</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- YouTube Clone -->
+        <div class="project-card">
+            <div class="project-image">
+                <div
+                    style="width: 100%; height: 100%; background: linear-gradient(135deg, #FF0000 0%, #282828 100%); display: flex; align-items: center; justify-content: center;">
+                    <i class="fab fa-youtube" style="font-size: 120px; opacity: 0.3;"></i>
+                </div>
+                <div class="project-overlay">
+                    <span class="project-label">Web Application</span>
+                    <h3 class="project-title">YouTube Clone</h3>
+                    <p class="project-description">A fully responsive YouTube interface clone featuring dynamic
+                        navigation, video cards, shorts section, and mobile menu functionality.</p>
+                    <div class="project-tags">
+                        <span class="tag">HTML5</span>
+                        <span class="tag">CSS3</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">Tailwind CSS</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://youtube-home-page-786.netlify.app/" target="_blank" class="project-link">
+                            <i class="fas fa-external-link-alt"></i>
+                            <span>Live Demo</span>
+                        </a>
+                        <a href="https://github.com/AyanQureshi16/Youtube-Clone" target="_blank" class="project-link">
+                            <i class="fab fa-github"></i>
+                            <span>Source Code</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Foodpanda Clone -->
+        <div class="project-card">
+            <div class="project-image">
+                <div
+                    style="width: 100%; height: 100%; background: linear-gradient(135deg, #e84141 0%, #c73030 100%); display: flex; align-items: center; justify-content: center;">
+                    <i class="fas fa-utensils" style="font-size: 120px; opacity: 0.3;"></i>
+                </div>
+                <div class="project-overlay">
+                    <span class="project-label">E-Commerce Platform</span>
+                    <h3 class="project-title">Foodpanda Clone</h3>
+                    <p class="project-description">Complete food delivery website with hero section, restaurant cards,
+                        partner section, interactive FAQ accordion, and responsive footer.</p>
+                    <div class="project-tags">
+                        <span class="tag">HTML5</span>
+                        <span class="tag">CSS3</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">Tailwind CSS</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://foodpanda-home-page.netlify.app/" target="_blank" class="project-link">
+                            <i class="fas fa-external-link-alt"></i>
+                            <span>Live Demo</span>
+                        </a>
+                        <a href="https://github.com/AyanQureshi16/Foodpanda-Clone" target="_blank" class="project-link">
+                            <i class="fab fa-github"></i>
+                            <span>Source Code</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Grok AI Clone -->
+        <div class="project-card">
+            <div class="project-image">
+                <div
+                    style="width: 100%; height: 100%; background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 50%, #EC4899 100%); display: flex; align-items: center; justify-content: center;">
+                    <i class="fas fa-robot" style="font-size: 120px; opacity: 0.3;"></i>
+                </div>
+                <div class="project-overlay">
+                    <span class="project-label">AI Interface</span>
+                    <h3 class="project-title">Grok AI Assistant</h3>
+                    <p class="project-description">Modern AI assistant interface with chat functionality, feature cards,
+                        and elegant search experience. Clean and professional design.</p>
+                    <div class="project-tags">
+                        <span class="tag">HTML5</span>
+                        <span class="tag">CSS3</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">Tailwind CSS</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://grok-ai-assitant.netlify.app/" target="_blank" class="project-link">
+                            <i class="fas fa-external-link-alt"></i>
+                            <span>Live Demo</span>
+                        </a>
+                        <a href="https://github.com/AyanQureshi16/Grok-Ai-Assitant" target="_blank"
+                            class="project-link">
+                            <i class="fab fa-github"></i>
+                            <span>Source Code</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stopwatch Pro -->
+        <div class="project-card">
+            <div class="project-image">
+                <div
+                    style="width: 100%; height: 100%; background: linear-gradient(135deg, #1e1b4b 0%, #8b5cf6 100%); display: flex; align-items: center; justify-content: center;">
+                    <i class="fas fa-stopwatch" style="font-size: 120px; opacity: 0.3;"></i>
+                </div>
+                <div class="project-overlay">
+                    <span class="project-label">Web Application</span>
+                    <h3 class="project-title">Ultra Pro Stopwatch</h3>
+                    <p class="project-description">Advanced stopwatch with lap timing, sound effects, achievements
+                        system, and keyboard shortcuts. Features animated particles and glassmorphic design.</p>
+                    <div class="project-tags">
+                        <span class="tag">HTML5</span>
+                        <span class="tag">CSS3</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">Web Audio API</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://stopwatch-pro-786.netlify.app/" target="_blank" class="project-link">
+                            <i class="fas fa-external-link-alt"></i>
+                            <span>Live Demo</span>
+                        </a>
+                        <a href="https://github.com/AyanQureshi16/Stopwatch-Pro" target="_blank" class="project-link">
+                            <i class="fab fa-github"></i>
+                            <span>Source Code</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Audi Website Clone -->
+        <div class="project-card">
+            <div class="project-image">
+                <div
+                    style="width: 100%; height: 100%; background: linear-gradient(135deg, #000000 0%, #333333 100%); display: flex; align-items: center; justify-content: center;">
+                    <i class="fas fa-car-side" style="font-size: 120px; opacity: 0.3;"></i>
+                </div>
+                <div class="project-overlay">
+                    <span class="project-label">Corporate Website</span>
+                    <h3 class="project-title">Audi Website Clone</h3>
+                    <p class="project-description">Luxury automotive brand website featuring hero sections, product
+                        cards, press releases, and comprehensive footer. Fully responsive with custom fonts.</p>
+                    <div class="project-tags">
+                        <span class="tag">HTML5</span>
+                        <span class="tag">CSS3</span>
+                        <span class="tag">Responsive Design</span>
+                        <span class="tag">Custom Fonts</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://audi-website-assignment-4.netlify.app/" target="_blank" class="project-link">
+                            <i class="fas fa-external-link-alt"></i>
+                            <span>Live Demo</span>
+                        </a>
+                        <a href="https://github.com/AyanQureshi16/audi-website-assignment-4" target="_blank"
+                            class="project-link">
+                            <i class="fab fa-github"></i>
+                            <span>Source Code</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Digital Clock -->
+        <div class="project-card">
+            <div class="project-image">
+                <div
+                    style="width: 100%; height: 100%; background: linear-gradient(135deg, #9333ea 0%, #db2777 100%); display: flex; align-items: center; justify-content: center;">
+                    <i class="fas fa-clock" style="font-size: 120px; opacity: 0.3;"></i>
+                </div>
+                <div class="project-overlay">
+                    <span class="project-label">Web Application</span>
+                    <h3 class="project-title">Digital Clock</h3>
+                    <p class="project-description">Beautiful digital clock with neon effects, glassmorphism design, and
+                        real-time date display. Features smooth animations and fully responsive layout.</p>
+                    <div class="project-tags">
+                        <span class="tag">HTML5</span>
+                        <span class="tag">CSS3</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">Tailwind CSS</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://digital-clock-1612.netlify.app/" target="_blank" class="project-link">
+                            <i class="fas fa-external-link-alt"></i>
+                            <span>Live Demo</span>
+                        </a>
+                        <a href="https://github.com/AyanQureshi16/Clock" target="_blank" class="project-link">
+                            <i class="fab fa-github"></i>
+                            <span>Source Code</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- GYM Website -->
+        <div class="project-card">
+            <div class="project-image">
+                <div
+                    style="width: 100%; height: 100%; background: linear-gradient(135deg, #000000 0%, #FFFF00 100%); display: flex; align-items: center; justify-content: center;">
+                    <i class="fas fa-dumbbell" style="font-size: 120px; opacity: 0.3;"></i>
+                </div>
+                <div class="project-overlay">
+                    <span class="project-label">Business Website</span>
+                    <h3 class="project-title">GYM24 Fitness Center</h3>
+                    <p class="project-description">Complete gym website with membership plans, trainer profiles, feature
+                        sections, and responsive design. Built with Bootstrap framework.</p>
+                    <div class="project-tags">
+                        <span class="tag">HTML5</span>
+                        <span class="tag">CSS3</span>
+                        <span class="tag">Bootstrap 5</span>
+                        <span class="tag">Responsive</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://hackaton-gym-website.netlify.app/" target="_blank" class="project-link">
+                            <i class="fas fa-external-link-alt"></i>
+                            <span>Live Demo</span>
+                        </a>
+                        <a href="https://github.com/AyanQureshi16/Hackaton-GYM-Website" target="_blank"
+                            class="project-link">
+                            <i class="fab fa-github"></i>
+                            <span>Source Code</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="about-content">
+            <div class="about-text">
+                <h2>About Me</h2>
+                <p>Hi, I'm Ayan Shahid, a passionate self-taught frontend developer from Pakistan. I started coding at a
+                    young age and fell in love with the process of turning ideas into real, functional websites.</p>
+                <p>I specialize in building responsive, user-friendly web experiences using modern technologies and best
+                    practices. Currently, I'm focused on learning advanced JavaScript concepts and exploring new
+                    frontend frameworks.</p>
+                <p>Every project I build is an opportunity to learn something new and push my skills further. I believe
+                    in writing clean, maintainable code and creating interfaces that users love to interact with.</p>
+            </div>
+            <div>
+                <div
+                    style="width: 100%; height: 500px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 120px; opacity: 0.7;">
+                    <i class="fas fa-code"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <h2>Get In Touch</h2>
+        <p>Have a project in mind? Let's create something amazing together.</p>
+
+        <div style="max-width: 600px; margin: 0 auto 4rem;">
+            <form id="contactForm" style="text-align: left;">
+                <div style="margin-bottom: 1.5rem;">
+                    <label
+                        style="display: block; margin-bottom: 0.5rem; color: #999; font-size: 0.9rem; font-weight: 500;">Your
+                        Name</label>
+                    <input type="text" id="name" required
+                        style="width: 100%; padding: 1rem; background: #1a1a1a; border: 1px solid #333; border-radius: 10px; color: #fff; font-size: 1rem; transition: all 0.3s ease;">
+                </div>
+
+                <div style="margin-bottom: 1.5rem;">
+                    <label
+                        style="display: block; margin-bottom: 0.5rem; color: #999; font-size: 0.9rem; font-weight: 500;">Your
+                        Email</label>
+                    <input type="email" id="email" required
+                        style="width: 100%; padding: 1rem; background: #1a1a1a; border: 1px solid #333; border-radius: 10px; color: #fff; font-size: 1rem; transition: all 0.3s ease;">
+                </div>
+
+                <div style="margin-bottom: 1.5rem;">
+                    <label
+                        style="display: block; margin-bottom: 0.5rem; color: #999; font-size: 0.9rem; font-weight: 500;">Subject</label>
+                    <input type="text" id="subject" required
+                        style="width: 100%; padding: 1rem; background: #1a1a1a; border: 1px solid #333; border-radius: 10px; color: #fff; font-size: 1rem; transition: all 0.3s ease;">
+                </div>
+
+                <div style="margin-bottom: 2rem;">
+                    <label
+                        style="display: block; margin-bottom: 0.5rem; color: #999; font-size: 0.9rem; font-weight: 500;">Your
+                        Message</label>
+                    <textarea id="message" required rows="6"
+                        style="width: 100%; padding: 1rem; background: #1a1a1a; border: 1px solid #333; border-radius: 10px; color: #fff; font-size: 1rem; resize: vertical; transition: all 0.3s ease;"></textarea>
+                </div>
+
+                <button type="submit"
+                    style="width: 100%; padding: 1.25rem; background: #fff; color: #0a0a0a; border: none; border-radius: 50px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">
+                    Send Message
+                </button>
+            </form>
+        </div>
+
+        <div style="margin: 4rem 0 2rem; padding-top: 3rem; border-top: 1px solid #333;">
+            <p style="font-size: 1rem; color: #999; margin-bottom: 2rem;">Or reach me directly</p>
+            <div class="contact-links">
+                <a href="mailto:ayanshahid1612@gmail.com" class="contact-link">
+                    <i class="fas fa-envelope"></i>
+                    <span>ayanshahid1612@gmail.com</span>
+                </a>
+                <a href="https://github.com/ayanqureshi16" target="_blank" class="contact-link">
+                    <i class="fab fa-github"></i>
+                    <span>GitHub Profile</span>
+                </a>
+                <a href="https://linkedin.com" target="_blank" class="contact-link">
+                    <i class="fab fa-linkedin"></i>
+                    <span>LinkedIn</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Ayan Shahid. Designed & Built with passion.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

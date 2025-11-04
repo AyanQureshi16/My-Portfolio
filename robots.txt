@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://ayanqureshi16.github.io/My-Portfolio/sitemap.xml
+
+# Disallow admin or private pages (if any)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Allow all CSS and JS files
+Allow: /*.css
+Allow: /*.js
+
+# Crawl-delay (optional, not needed for most sites)
+# Crawl-delay: 10

@@ -2,6 +2,15 @@
 <html lang="en">
 
 <head>
+    <script>
+// Suppress extension errors
+window.addEventListener('error', function(e) {
+    if (e.filename && (e.filename.includes('chrome-extension') || e.filename.includes('MirrorStartStop'))) {
+        e.preventDefault();
+        return true;
+    }
+});
+</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     

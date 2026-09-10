@@ -2,52 +2,56 @@
 <html lang="en">
 
 <head>
-    <script>
-// Suppress extension errors
-window.addEventListener('error', function(e) {
-    if (e.filename && (e.filename.includes('chrome-extension') || e.filename.includes('MirrorStartStop'))) {
-        e.preventDefault();
-        return true;
-    }
-});
-</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="./assets/ayan.jpg" href="./assets/ayan.jpg">
+
+    <script>
+        // Suppress noisy browser-extension errors that aren't ours
+        window.addEventListener('error', function (e) {
+            if (e.filename && (e.filename.includes('chrome-extension') || e.filename.includes('MirrorStartStop'))) {
+                e.preventDefault();
+                return true;
+            }
+        });
+    </script>
 
     <!-- Primary Meta Tags -->
-    <title>Ayan Shahid - Full Stack Developer | React.js, Node.js & Modern Web Development</title>
-    <meta name="title" content="Ayan Shahid - Full Stack Developer | React.js, Node.js & Modern Web Development">
-    <meta name="description" content="Passionate self-taught Full Stack Developer from Pakistan specializing in React.js, Node.js, Firebase, and modern web technologies. Building responsive, user-friendly websites with clean code and modern design principles.">
-    <meta name="keywords" content="Ayan Shahid, Full Stack Developer, Web Developer Pakistan, React.js Developer, Frontend Developer, Node.js, Firebase, JavaScript Developer, Web Development Services, Responsive Web Design, Portfolio, HTML5, CSS3, Bootstrap, Tailwind CSS">
+    <title>Ayan Shahid - MERN Stack Developer | React.js, Node.js & Modern Web Development</title>
+    <meta name="title" content="Ayan Shahid - MERN Stack Developer | React.js, Node.js & Modern Web Development">
+    <meta name="description"
+        content="Passionate self-taught MERN Stack Developer from Pakistan specializing in React.js, Node.js, Firebase, and modern web technologies. Building responsive, user-friendly websites with clean code and modern design principles.">
+    <meta name="keywords"
+        content="Ayan Shahid, MERN Stack Developer, Web Developer Pakistan, React.js Developer, Frontend Developer, Node.js, Firebase, JavaScript Developer, Web Development Services, Responsive Web Design, Portfolio, HTML5, CSS3, Bootstrap, Tailwind CSS">
     <meta name="author" content="Ayan Shahid">
     <meta name="robots" content="index, follow">
     <meta name="language" content="English">
-    <meta name="revisit-after" content="7 days">
-    
+
     <!-- Canonical URL -->
     <link rel="canonical" href="https://ayanqureshi16.github.io/My-Portfolio/">
-    
+
     <!-- Open Graph / Facebook Meta Tags -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ayanqureshi16.github.io/My-Portfolio/">
-    <meta property="og:title" content="Ayan Shahid - Full Stack Developer | React.js, Node.js & Modern Web Development">
-    <meta property="og:description" content="Passionate self-taught Full Stack Developer from Pakistan specializing in React.js, Node.js, Firebase, and modern web technologies. Building responsive, user-friendly websites with clean code and modern design principles.">
-    <meta property="og:image" content="https://ayanqureshi16.github.io/My-Portfolio/assets/preview-image.jpg">
+    <meta property="og:title" content="Ayan Shahid - MERN Stack Developer | React.js, Node.js & Modern Web Development">
+    <meta property="og:description"
+        content="Passionate self-taught Full Stack Developer from Pakistan specializing in React.js, Node.js, Firebase, and modern web technologies. Building responsive, user-friendly websites with clean code and modern design principles.">
+    <meta property="og:image" content="https://ayanqureshi16.github.io/My-Portfolio/assets/Ayan_Instagram_DP.jpg">
     <meta property="og:site_name" content="Ayan Shahid Portfolio">
     <meta property="og:locale" content="en_US">
-    
+
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://ayanqureshi16.github.io/My-Portfolio/">
-    <meta name="twitter:title" content="Ayan Shahid - Full Stack Developer | React.js, Node.js & Modern Web Development">
-    <meta name="twitter:description" content="Passionate self-taught Full Stack Developer from Pakistan specializing in React.js, Node.js, Firebase, and modern web technologies.">
-    <meta name="twitter:image" content="https://ayanqureshi16.github.io/My-Portfolio/assets/preview-image.jpg">
-    
+    <meta name="twitter:title"
+        content="Ayan Shahid - Full Stack Developer | React.js, Node.js & Modern Web Development">
+    <meta name="twitter:description"
+        content="Passionate self-taught Full Stack Developer from Pakistan specializing in React.js, Node.js, Firebase, and modern web technologies.">
+    <meta name="twitter:image" content="https://ayanqureshi16.github.io/My-Portfolio/assets/Ayan_Instagram_DP.jpg">
+
     <!-- Additional Meta Tags -->
-    <meta name="theme-color" content="#0a0a0a">
-    <meta name="msapplication-TileColor" content="#0a0a0a">
-    
+    <meta name="theme-color" content="#0B0F1A">
+    <meta name="msapplication-TileColor" content="#0B0F1A">
+
     <!-- Structured Data (JSON-LD) for Better SEO -->
     <script type="application/ld+json">
     {
@@ -55,13 +59,13 @@ window.addEventListener('error', function(e) {
       "@type": "Person",
       "name": "Ayan Shahid",
       "url": "https://ayanqureshi16.github.io/My-Portfolio/",
-      "image": "https://ayanqureshi16.github.io/My-Portfolio/assets/profile-image.jpg",
+      "image": "https://ayanqureshi16.github.io/My-Portfolio/assets/Ayan_Instagram_DP.jpg",
       "jobTitle": "Full Stack Developer",
       "worksFor": {
         "@type": "Organization",
         "name": "Freelance"
       },
-      "description": "Passionate self-taught Full Stack Developer from Pakistan specializing in React.js, Node.js, Firebase, and modern web technologies.",
+      "description": "Passionate self-taught MERN Stack Developer from Pakistan specializing in React.js, Node.js, Firebase, and modern web technologies.",
       "knowsAbout": ["React.js", "Node.js", "JavaScript", "HTML5", "CSS3", "Firebase", "Express.js", "Web Development", "Frontend Development", "Backend Development", "Bootstrap", "Tailwind CSS"],
       "sameAs": [
         "https://github.com/ayanqureshi16",
@@ -70,704 +74,776 @@ window.addEventListener('error', function(e) {
       "email": "ayanshahid1612@gmail.com"
     }
     </script>
-    
+
     <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="./assets/coding image.webp">
-    <link rel="icon" type="image/png" sizes="16x16" href="./assets/coding image.webp">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    
+    <link rel="icon" type="image/jpeg" href="./assets/Ayan_Instagram_DP.jpg">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/Ayan_Instagram_DP.jpg">
+
+    <!-- Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <meta name="google-site-verification" content="cpjn8pyYydnNT_mjHidr08JZWpTMkc2xH4ZNAw_QtE8" />
 </head>
 
 <body>
-    <!-- Theme Toggle Button -->
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark and light theme">
-        <i class="fas fa-moon" id="themeIcon"></i>
-    </button>
+    <a href="#main" class="skip-link">Skip to main content</a>
 
-    <div class="cursor-dot"></div>
-    <div class="cursor-outline"></div>
+    <!-- Scroll progress indicator -->
+    <div class="scroll-progress" aria-hidden="true">
+        <span class="scroll-progress-bar" id="scrollProgress"></span>
+    </div>
 
-    <nav id="nav" role="navigation" aria-label="Main navigation">
-        <div class="flex justify-between items-center">
-            <div class="text-xl font-bold">Portfolio</div>
-            <div class="hidden md:flex gap-8 items-center">
-                <a href="#home" class="nav-link" aria-label="Navigate to home section">Home</a>
-                <a href="#skills" class="nav-link" aria-label="Navigate to skills section">Skills</a>
-                <a href="#services" class="nav-link" aria-label="Navigate to services section">Services</a>
-                <a href="#projects" class="nav-link" aria-label="Navigate to projects section">Projects</a>
-                <a href="#about" class="nav-link" aria-label="Navigate to about section">About</a>
-                <a href="#contact" class="nav-link" aria-label="Navigate to contact section">Contact</a>
+    <div class="cursor-dot" aria-hidden="true"></div>
+    <div class="cursor-outline" aria-hidden="true"></div>
 
-                <!-- Theme Toggle in Nav -->
-                <button class="theme-toggle-nav" id="themeToggleNav" aria-label="Toggle dark and light theme"
-                    style="position: relative; width: 40px; height: 40px; background: var(--card-bg); border: 2px solid var(--border-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.3s ease; margin-left: 1rem;">
-                    <i class="fas fa-moon" id="themeIconNav" style="font-size: 1rem; color: var(--text-primary);"></i>
+    <nav id="nav" aria-label="Main navigation">
+        <div class="nav-inner">
+            <a href="#home" class="nav-brand" aria-label="Back to top">
+                Ayan<span class="nav-brand-dot">.</span>
+            </a>
+
+            <div class="nav-links">
+                <a href="#home" class="nav-link" data-spy="home">Home</a>
+                <a href="#skills" class="nav-link" data-spy="skills">Skills</a>
+                <a href="#services" class="nav-link" data-spy="services">Services</a>
+                <a href="#projects" class="nav-link" data-spy="projects">Projects</a>
+                <a href="#certificates" class="nav-link" data-spy="certificates">Certificates</a>
+                <a href="#about" class="nav-link" data-spy="about">About</a>
+                <a href="#contact" class="nav-link" data-spy="contact">Contact</a>
+                <a href="./assets/Ayan Shahid Resume.pdf" target="_blank" rel="noopener noreferrer"
+                    class="nav-link nav-link-resume">
+                    Resume <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                </a>
+            </div>
+
+            <div class="nav-actions">
+                <button class="theme-toggle-nav" id="themeToggleNav" type="button"
+                    aria-label="Toggle dark and light theme">
+                    <i class="fas fa-moon" id="themeIconNav" aria-hidden="true"></i>
+                </button>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" type="button" aria-label="Open navigation menu"
+                    aria-expanded="false" aria-controls="mobileNav">
+                    <span></span><span></span><span></span>
                 </button>
             </div>
         </div>
     </nav>
 
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Ayan Shahid<br>Full Stack Developer</h1>
-            <p>Specialized in creating responsive, user-friendly websites with clean code and modern design
-                principles.Crafting beautiful digital experience.Building scalable web applications with modern
-                technologies</p>
-            <a href="#projects" class="cta-btn" aria-label="View my portfolio projects">View My Work</a>
-        </div>
-    </section>
+    <!-- Mobile navigation: mirrors the desktop link set exactly -->
+    <div class="mobile-nav" id="mobileNav" hidden>
+        <a href="#home">Home</a>
+        <a href="#skills">Skills</a>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#certificates">Certificates</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="./assets/Ayan Shahid Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+    </div>
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills-section" aria-labelledby="skills-heading">
-        <h2 id="skills-heading" class="section-title">Expertise</h2>
-        <div class="skills-grid">
-            <article class="skill-card">
-                <div class="skill-icon" style="color: #E34F26;" aria-hidden="true">
-                    <i class="fab fa-html5 fa-beat-fade"></i>
-                </div>
-                <h3 class="skill-name">HTML5</h3>
-                <p class="skill-level">Advanced</p>
-            </article>
+    <main id="main">
+        <section id="home" class="hero">
+            <div class="aurora" aria-hidden="true">
+                <span class="aurora-layer aurora-1 parallax-layer"></span>
+                <span class="aurora-layer aurora-2 parallax-layer"></span>
+                <span class="aurora-layer aurora-3 parallax-layer"></span>
+                <span class="aurora-grid"></span>
+            </div>
 
-            <article class="skill-card">
-                <div class="skill-icon" style="color: #1572B6;" aria-hidden="true">
-                    <i class="fab fa-css3-alt fa-beat-fade"></i>
-                </div>
-                <h3 class="skill-name">CSS3</h3>
-                <p class="skill-level">Advanced</p>
-            </article>
-
-            <article class="skill-card">
-                <div class="skill-icon" style="color: #F7DF1E;" aria-hidden="true">
-                    <i class="fab fa-js fa-beat-fade"></i>
-                </div>
-                <h3 class="skill-name">JavaScript</h3>
-                <p class="skill-level">Intermediate</p>
-            </article>
-
-            <article class="skill-card">
-                <div class="skill-icon" style="color: #38B2AC;" aria-hidden="true">
-                    <i class="fas fa-wind fa-beat-fade"></i>
-                </div>
-                <h3 class="skill-name">Tailwind CSS</h3>
-                <p class="skill-level">Advanced</p>
-            </article>
-
-            <article class="skill-card">
-                <div class="skill-icon" style="color: #7952B3;" aria-hidden="true">
-                    <i class="fab fa-bootstrap fa-beat-fade"></i>
-                </div>
-                <h3 class="skill-name">Bootstrap</h3>
-                <p class="skill-level">Advanced</p>
-            </article>
-
-            <article class="skill-card">
-                <div class="skill-icon" style="color: #FF6B6B;" aria-hidden="true">
-                    <i class="fas fa-mobile-alt fa-beat-fade"></i>
-                </div>
-                <h3 class="skill-name">Responsive Design</h3>
-                <p class="skill-level">Advanced</p>
-            </article>
-
-            <article class="skill-card">
-                <div class="skill-icon" style="color: #F05032;" aria-hidden="true">
-                    <i class="fab fa-git-alt fa-beat-fade"></i>
-                </div>
-                <h3 class="skill-name">Git</h3>
-                <p class="skill-level">Intermediate</p>
-            </article>
-
-            <article class="skill-card">
-                <div class="skill-icon" style="color: #ab9e12;" aria-hidden="true">
-                    <i class="fa-brands fa-square-github fa-beat-fade"></i>
-                </div>
-                <h3 class="skill-name">GitHub</h3>
-                <p class="skill-level">Advanced</p>
-            </article>
-
-            <article class="skill-card">
-                <div class="skill-icon" style="color: #06B6D4;" aria-hidden="true">
-                    <i class="fas fa-code fa-beat-fade"></i>
-                </div>
-                <h3 class="skill-name">VS Code</h3>
-                <p class="skill-level">Advanced</p>
-            </article>
-
-            <article class="skill-card">
-                <div class="skill-icon" style="color: #FF9800;" aria-hidden="true">
-                    <i class="fab fa-figma fa-beat-fade"></i>
-                </div>
-                <h3 class="skill-name">Figma</h3>
-                <p class="skill-level">Beginner</p>
-            </article>
-
-            <article class="skill-card">
-                <div class="skill-icon" style="color: #00C7B7;" aria-hidden="true">
-                    <i class="fas fa-globe fa-beat-fade"></i>
-                </div>
-                <h3 class="skill-name">Netlify</h3>
-                <p class="skill-level">Intermediate</p>
-            </article>
-
-            <article class="skill-card">
-                <div class="skill-icon" style="color: #FF6B9D;" aria-hidden="true">
-                    <i class="fas fa-pencil-ruler fa-beat-fade"></i>
-                </div>
-                <h3 class="skill-name">UI/UX Design</h3>
-                <p class="skill-level">Intermediate</p>
-            </article>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="skills-section" style="background: var(--bg-secondary);" aria-labelledby="services-heading">
-        <h2 id="services-heading" class="section-title">Services I Offer</h2>
-        <p
-            style="text-align: center; color: var(--text-secondary); font-size: 1.15rem; max-width: 700px; margin: -2rem auto 3rem;">
-            Comprehensive solutions tailored to your needs
-        </p>
-        <div class="services-grid">
-            <article class="service-card">
-                <div class="service-icon" aria-hidden="true">
-                    <i class="fas fa-globe"></i>
-                </div>
-                <h3 class="service-title">Website Development</h3>
-                <p class="service-description">Development of responsive and interactive websites for individuals,
-                    businesses, or organizations using HTML5, CSS3, JavaScript, and Bootstrap. Ensures mobile-friendly
-                    and optimized performance across all devices.</p>
-            </article>
-
-            <article class="service-card">
-                <div class="service-icon" aria-hidden="true">
-                    <i class="fas fa-laptop-code"></i>
-                </div>
-                <h3 class="service-title">Frontend Development</h3>
-                <p class="service-description">Specialized in building intuitive user interfaces (UIs) and seamless user
-                    experiences (UX) with HTML5, CSS3, JavaScript, and React.js. Delivers fast, responsive single-page
-                    applications (SPAs).</p>
-            </article>
-
-            <article class="service-card">
-                <div class="service-icon" aria-hidden="true">
-                    <i class="fas fa-code"></i>
-                </div>
-                <h3 class="service-title">Custom Web Applications</h3>
-                <p class="service-description">Creation of custom web applications using React.js with backend
-                    technologies like Node.js and Express.js. Integrates Firebase for real-time data, authentication,
-                    and hosting.</p>
-            </article>
-
-            <article class="service-card">
-                <div class="service-icon" aria-hidden="true">
-                    <i class="fas fa-server"></i>
-                </div>
-                <h3 class="service-title">Web Hosting and Deployment</h3>
-                <p class="service-description">Assistance in deploying websites and web applications on platforms like
-                    Firebase Hosting, Netlify, or traditional servers. Optimizes performance and ensures secure HTTPS
-                    connections.</p>
-            </article>
-
-            <article class="service-card">
-                <div class="service-icon" aria-hidden="true">
-                    <i class="fas fa-cog"></i>
-                </div>
-                <h3 class="service-title">Maintenance and Updates</h3>
-                <p class="service-description">Ongoing maintenance services, including security patches, performance
-                    optimizations, and feature updates. Provides backups and uptime monitoring for your web
-                    applications.</p>
-            </article>
-
-            <article class="service-card">
-                <div class="service-icon" aria-hidden="true">
-                    <i class="fas fa-mobile-alt"></i>
-                </div>
-                <h3 class="service-title">Responsive Design Audits</h3>
-                <p class="service-description">Evaluation of existing websites for responsiveness across devices and
-                    browsers. Implementation of improvements using CSS3 media queries and modern design principles.</p>
-            </article>
-
-            <article class="service-card">
-                <div class="service-icon" aria-hidden="true">
-                    <i class="fas fa-mobile"></i>
-                </div>
-                <h3 class="service-title">Mobile App Development</h3>
-                <p class="service-description">Building cross-platform mobile applications using modern frameworks and
-                    technologies. Focus on creating smooth, native-like experiences for both iOS and Android platforms.
+            <div class="hero-content">
+                <p class="hero-eyebrow">
+                    <span class="hero-eyebrow-dot" aria-hidden="true"></span>
+                    Available for freelance work
                 </p>
-            </article>
-
-            <article class="service-card">
-                <div class="service-icon" aria-hidden="true">
-                    <i class="fas fa-shopping-cart"></i>
+                <h1 class="hero-title">
+                    <span class="hero-name" data-split>Ayan Shahid</span>
+                    <span class="hero-role">MERN Stack Developer</span>
+                </h1>
+                <p class="hero-sub">
+                    Specialized in creating responsive, user-friendly websites with clean code and modern design
+                    principles. Crafting beautiful digital experiences and building scalable web applications with
+                    modern technologies.
+                </p>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn btn-primary" data-magnetic aria-label="View my portfolio projects">
+                        View My Work
+                        <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                    <a href="./assets/Ayan Shahid Resume.pdf" target="_blank" rel="noopener noreferrer"
+                        class="btn btn-ghost" aria-label="View Resume">
+                        View Resume
+                        <i class="fas fa-file-arrow-down" aria-hidden="true"></i>
+                    </a>
                 </div>
-                <h3 class="service-title">E-commerce Solutions</h3>
-                <p class="service-description">Development of complete e-commerce websites with product catalogs,
-                    shopping carts, payment integration, and order management systems. Secure and scalable solutions for
-                    online businesses.</p>
-            </article>
-        </div>
-    </section>
 
-    <section id="projects" class="projects-section" aria-labelledby="projects-heading">
-        <h2 id="projects-heading" class="section-title">Featured Projects</h2>
-        <p
-            style="text-align: center; color: var(--text-secondary); font-size: 1.15rem; max-width: 700px; margin: -2rem auto 3rem;">
-            A selection of my recent work and personal projects
-        </p>
-
-        <!-- Web Agency -->
-        <article class="project-card">
-            <div class="project-image">
-                <div
-                    style="width: 100%; height: 100%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center;">
-                    <i class="fas fa-briefcase" style="font-size: 120px; opacity: 0.3;" aria-hidden="true"></i>
-                </div>
-                <div class="project-overlay">
-                    <span class="project-label">Business Website</span>
-                    <h3 class="project-title">Web Agency</h3>
-                    <p class="project-description">Professional web agency website with hero section, services showcase,
-                        portfolio gallery, testimonials, and contact form. Fully responsive design.</p>
-                    <div class="project-tags">
-                        <span class="tag">HTML5</span>
-                        <span class="tag">CSS3</span>
-                        <span class="tag">Bootstrap</span>
-                        <span class="tag">Tailwind CSS</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="http://webagency-template.netlify.app/" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View Web Agency project live demo">
-                            <i class="fas fa-external-link-alt" aria-hidden="true"></i>
-                            <span>Live Demo</span>
-                        </a>
-                        <a href="https://github.com/AyanQureshi16/Webagency-Template-Assignment-8" target="_blank" rel="noopener noreferrer"
-                            class="project-link" aria-label="View Web Agency project source code on GitHub">
-                            <i class="fab fa-github" aria-hidden="true"></i>
-                            <span>Source Code</span>
-                        </a>
+                <div class="hero-marquee" aria-hidden="true">
+                    <div class="hero-marquee-track">
+                        <span>React</span><span>Next.js</span><span>Node.js</span><span>Express</span>
+                        <span>MongoDB</span><span>Firebase</span><span>Tailwind</span><span>GSAP</span>
+                        <span>React</span><span>Next.js</span><span>Node.js</span><span>Express</span>
+                        <span>MongoDB</span><span>Firebase</span><span>Tailwind</span><span>GSAP</span>
                     </div>
                 </div>
             </div>
-        </article>
 
-        <!-- Toyota Clone -->
-        <article class="project-card">
-            <div class="project-image">
-                <div
-                    style="width: 100%; height: 100%; background: linear-gradient(135deg, #CC0000 0%, #000000 100%); display: flex; align-items: center; justify-content: center;">
-                    <i class="fas fa-car" style="font-size: 120px; opacity: 0.3;" aria-hidden="true"></i>
-                </div>
-                <div class="project-overlay">
-                    <span class="project-label">Automotive Website</span>
-                    <h3 class="project-title">Toyota Pakistan Clone</h3>
-                    <p class="project-description">Complete automotive website clone featuring image carousels, product
-                        cards, news section, and comprehensive footer. Bootstrap integration with custom styling.</p>
-                    <div class="project-tags">
-                        <span class="tag">HTML5</span>
-                        <span class="tag">CSS3</span>
-                        <span class="tag">Bootstrap 5</span>
-                        <span class="tag">JavaScript</span>
+            <a href="#skills" class="hero-scroll-cue" aria-label="Scroll to skills">
+                <span class="hero-scroll-line" aria-hidden="true"></span>
+                Scroll
+            </a>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section" aria-labelledby="skills-heading">
+            <header class="section-head" data-reveal>
+                <p class="section-kicker">Toolkit</p>
+                <h2 id="skills-heading" class="section-title">Skills</h2>
+                <p class="section-lead">The stack I reach for when building for the web</p>
+            </header>
+
+            <div class="skills-categories-grid" data-stagger>
+                <!-- Frontend Category -->
+                <article class="glass-card skill-category-card">
+                    <div class="category-icon" aria-hidden="true">
+                        <i class="fas fa-laptop-code"></i>
                     </div>
-                    <div class="project-links">
-                        <a href="https://toyota-website-assignment-6.netlify.app/" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View Toyota Pakistan Clone project live demo">
-                            <i class="fas fa-external-link-alt" aria-hidden="true"></i>
-                            <span>Live Demo</span>
-                        </a>
-                        <a href="https://github.com/AyanQureshi16/Toyota-Website-Assignment-6" target="_blank" rel="noopener noreferrer"
-                            class="project-link" aria-label="View Toyota Pakistan Clone source code on GitHub">
-                            <i class="fab fa-github" aria-hidden="true"></i>
-                            <span>Source Code</span>
-                        </a>
+                    <h3 class="category-title">Frontend Development</h3>
+                    <ul class="category-skills-list">
+                        <li><i class="fab fa-html5 icon-html" aria-hidden="true"></i> HTML5</li>
+                        <li><i class="fab fa-css3-alt icon-css" aria-hidden="true"></i> CSS3</li>
+                        <li><i class="fab fa-js icon-js" aria-hidden="true"></i> JavaScript</li>
+                        <li><i class="fab fa-react icon-react" aria-hidden="true"></i> React.js</li>
+                        <li><i class="devicon-nextjs-plain icon-neutral" aria-hidden="true"></i> Next.js</li>
+                        <li><i class="fab fa-bootstrap icon-bootstrap" aria-hidden="true"></i> Bootstrap</li>
+                        <li><i class="fas fa-wind icon-tailwind" aria-hidden="true"></i> Tailwind CSS</li>
+                        <li><i class="fas fa-bolt icon-gsap" aria-hidden="true"></i> GSAP</li>
+                    </ul>
+                </article>
+
+                <!-- Backend Category -->
+                <article class="glass-card skill-category-card">
+                    <div class="category-icon" aria-hidden="true">
+                        <i class="fas fa-server"></i>
                     </div>
-                </div>
+                    <h3 class="category-title">Backend &amp; Database</h3>
+                    <ul class="category-skills-list">
+                        <li><i class="fab fa-node-js icon-node" aria-hidden="true"></i> Node.js</li>
+                        <li><i class="fas fa-server icon-neutral" aria-hidden="true"></i> Express.js</li>
+                        <li><i class="fas fa-database icon-mongo" aria-hidden="true"></i> MongoDB</li>
+                        <li><i class="fas fa-network-wired icon-api" aria-hidden="true"></i> REST APIs</li>
+                        <li><i class="fas fa-fire icon-firebase" aria-hidden="true"></i> Firebase</li>
+                    </ul>
+                </article>
+
+                <!-- Tools Category -->
+                <article class="glass-card skill-category-card">
+                    <div class="category-icon" aria-hidden="true">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3 class="category-title">Tools &amp; Deployment</h3>
+                    <ul class="category-skills-list">
+                        <li><i class="fab fa-git-alt icon-git" aria-hidden="true"></i> Git &amp; GitHub</li>
+                        <li><i class="fas fa-code icon-vscode" aria-hidden="true"></i> VS Code</li>
+                        <li><i class="fas fa-rocket icon-neutral" aria-hidden="true"></i> Vercel</li>
+                        <li><i class="fas fa-cloud icon-render" aria-hidden="true"></i> Render</li>
+                        <li><i class="fas fa-image icon-cloudinary" aria-hidden="true"></i> Cloudinary</li>
+                        <li><i class="fa-solid fa-rocket icon-postman" aria-hidden="true"></i> Postman</li>
+                        <li><i class="fa-brands fa-docker icon-docker" aria-hidden="true"></i> Docker</li>
+                    </ul>
+                </article>
             </div>
-        </article>
+        </section>
 
-        <!-- Watch Store -->
-        <article class="project-card">
-            <div class="project-image">
-                <div
-                    style="width: 100%; height: 100%; background: linear-gradient(135deg, #2C3E50 0%, #3498DB 100%); display: flex; align-items: center; justify-content: center;">
-                    <i class="fas fa-clock" style="font-size: 120px; opacity: 0.3;" aria-hidden="true"></i>
-                </div>
-                <div class="project-overlay">
-                    <span class="project-label">E-Commerce Store</span>
-                    <h3 class="project-title">Nizam Watch House</h3>
-                    <p class="project-description">Elegant e-commerce website for luxury watches featuring hero section,
-                        product showcase, about section, and contact footer with Bootstrap framework.</p>
-                    <div class="project-tags">
-                        <span class="tag">HTML5</span>
-                        <span class="tag">CSS3</span>
-                        <span class="tag">Bootstrap 5</span>
+        <!-- Services Section -->
+        <section id="services" class="section section-alt" aria-labelledby="services-heading">
+            <header class="section-head" data-reveal>
+                <p class="section-kicker">What I do</p>
+                <h2 id="services-heading" class="section-title">Services I Offer</h2>
+                <p class="section-lead">Comprehensive solutions tailored to your needs</p>
+            </header>
+
+            <div class="services-grid" data-stagger>
+                <article class="glass-card service-card">
+                    <div class="service-icon" aria-hidden="true">
+                        <i class="fas fa-globe"></i>
                     </div>
-                    <div class="project-links">
-                        <a href="https://nizam-watch-house-assignment-5.netlify.app/" target="_blank" rel="noopener noreferrer"
-                            class="project-link" aria-label="View Nizam Watch House project live demo">
-                            <i class="fas fa-external-link-alt" aria-hidden="true"></i>
-                            <span>Live Demo</span>
-                        </a>
-                        <a href="https://github.com/AyanQureshi16/Nizam-Watch-House-Assignment-5" target="_blank" rel="noopener noreferrer"
-                            class="project-link" aria-label="View Nizam Watch House source code on GitHub">
-                            <i class="fab fa-github" aria-hidden="true"></i>
-                            <span>Source Code</span>
-                        </a>
+                    <h3 class="service-title">Website Development</h3>
+                    <p class="service-description">Development of responsive and interactive websites for individuals,
+                        businesses, or organizations using HTML5, CSS3, JavaScript, and Bootstrap. Ensures
+                        mobile-friendly and optimized performance across all devices.</p>
+                </article>
+
+                <article class="glass-card service-card">
+                    <div class="service-icon" aria-hidden="true">
+                        <i class="fas fa-laptop-code"></i>
                     </div>
-                </div>
+                    <h3 class="service-title">Frontend Development</h3>
+                    <p class="service-description">Specialized in building intuitive user interfaces (UIs) and seamless
+                        user experiences (UX) with HTML5, CSS3, JavaScript, and React.js. Delivers fast, responsive
+                        single-page applications (SPAs).</p>
+                </article>
+
+                <article class="glass-card service-card">
+                    <div class="service-icon" aria-hidden="true">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="service-title">Custom Web Applications</h3>
+                    <p class="service-description">Creation of custom web applications using React.js with backend
+                        technologies like Node.js and Express.js. Integrates Firebase for real-time data,
+                        authentication, and hosting.</p>
+                </article>
+
+                <article class="glass-card service-card">
+                    <div class="service-icon" aria-hidden="true">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3 class="service-title">Web Hosting and Deployment</h3>
+                    <p class="service-description">Assistance in deploying websites and web applications on platforms
+                        like Firebase Hosting, Netlify, or traditional servers. Optimizes performance and ensures secure
+                        HTTPS connections.</p>
+                </article>
+
+                <article class="glass-card service-card">
+                    <div class="service-icon" aria-hidden="true">
+                        <i class="fas fa-cog"></i>
+                    </div>
+                    <h3 class="service-title">Maintenance and Updates</h3>
+                    <p class="service-description">Ongoing maintenance services, including security patches, performance
+                        optimizations, and feature updates. Provides backups and uptime monitoring for your web
+                        applications.</p>
+                </article>
+
+                <article class="glass-card service-card">
+                    <div class="service-icon" aria-hidden="true">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="service-title">Responsive Design Audits</h3>
+                    <p class="service-description">Evaluation of existing websites for responsiveness across devices and
+                        browsers. Implementation of improvements using CSS3 media queries and modern design
+                        principles.</p>
+                </article>
+
+                <article class="glass-card service-card">
+                    <div class="service-icon" aria-hidden="true">
+                        <i class="fas fa-mobile"></i>
+                    </div>
+                    <h3 class="service-title">Mobile App Development</h3>
+                    <p class="service-description">Building cross-platform mobile applications using modern frameworks
+                        and technologies. Focus on creating smooth, native-like experiences for both iOS and Android
+                        platforms.</p>
+                </article>
+
+                <article class="glass-card service-card">
+                    <div class="service-icon" aria-hidden="true">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3 class="service-title">E-commerce Solutions</h3>
+                    <p class="service-description">Development of complete e-commerce websites with product catalogs,
+                        shopping carts, payment integration, and order management systems. Secure and scalable solutions
+                        for online businesses.</p>
+                </article>
             </div>
-        </article>
+        </section>
 
-        <!-- Login System -->
-        <article class="project-card">
-            <div class="project-image">
-                <div
-                    style="width: 100%; height: 100%; background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #d946ef 100%); display: flex; align-items: center; justify-content: center;">
-                    <i class="fas fa-lock" style="font-size: 120px; opacity: 0.3;" aria-hidden="true"></i>
-                </div>
-                <div class="project-overlay">
-                    <span class="project-label">Authentication System</span>
-                    <h3 class="project-title">Login/Signup System</h3>
-                    <p class="project-description">Complete authentication system with login, signup, and protected
-                        pages. Features localStorage integration and modern gradient UI design.</p>
-                    <div class="project-tags">
-                        <span class="tag">HTML5</span>
-                        <span class="tag">CSS3</span>
-                        <span class="tag">JavaScript</span>
-                        <span class="tag">LocalStorage</span>
+        <!-- Projects Section -->
+        <section id="projects" class="section" aria-labelledby="projects-heading">
+            <header class="section-head" data-reveal>
+                <p class="section-kicker">Portfolio</p>
+                <h2 id="projects-heading" class="section-title">Featured Projects</h2>
+                <p class="section-lead">A selection of my recent work and personal projects</p>
+            </header>
+
+            <!--
+                ===========================================================
+                Card anatomy: preview image on top, then title / description
+                / tech tags / links. To swap in a real screenshot, replace the
+                file at ./assets/projects/<slug>.svg with a .png or .webp of
+                the same 16:10 ratio and update the src + extension. The
+                width/height attrs must match the new file so the grid does
+                not reflow while images load.
+                ===========================================================
+            -->
+            <div class="projects-grid" data-stagger>
+                <!-- 1. Zelmior Watches -->
+                <article class="glass-card project-card">
+                    <div class="project-media">
+                        <img src="./assets/projects/zelmior-device-showcase.png"
+                            alt="Preview of the Zelmior Watches storefront on desktop and mobile" width="1200"
+                            height="750" loading="lazy" decoding="async">
+                        <span class="project-label">E-Commerce</span>
                     </div>
-                    <div class="project-links">
-                        <a href="https://ayanqureshi16.github.io/Login-Signup-Page/" target="_blank" rel="noopener noreferrer"
-                            class="project-link" aria-label="View Login Signup System project live demo">
-                            <i class="fas fa-external-link-alt" aria-hidden="true"></i>
-                            <span>Live Demo</span>
-                        </a>
-                        <a href="https://github.com/AyanQureshi16/Login-Signup-Page" target="_blank" rel="noopener noreferrer"
-                            class="project-link" aria-label="View Login Signup System source code on GitHub">
-                            <i class="fab fa-github" aria-hidden="true"></i>
-                            <span>Source Code</span>
-                        </a>
+                    <div class="project-body">
+                        <h3 class="project-title">Zelmior Watches</h3>
+                        <p class="project-description">Premium watch store featuring user authentication, product
+                            filtering, cart management, and secure checkout.</p>
+                        <ul class="project-tags">
+                            <li class="tag">React</li>
+                            <li class="tag">Javascript</li>
+                            <li class="tag">HTML</li>
+                            <li class="tag">CSS</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="https://github.com/AyanQureshi16/Zelmior-Premium-Watches" target="_blank"
+                                rel="noopener noreferrer" class="project-link"
+                                aria-label="Source code for Zelmior Watches">
+                                <i class="fab fa-github" aria-hidden="true"></i><span>Code</span>
+                            </a>
+                            <a href="https://zelmior.netlify.app/" target="_blank" rel="noopener noreferrer"
+                                class="project-link project-link-demo" aria-label="Live demo of Zelmior Watches">
+                                <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i><span>Demo</span>
+                            </a>
+                        </div>
                     </div>
-                </div>
+                </article>
+
+                <!-- 2. SEO Rank Tracker -->
+                <article class="glass-card project-card">
+                    <div class="project-media">
+                        <img src="./assets/projects/rankpilot-device-showcase.png"
+                            alt="Preview of the SEO Rank Tracker analytics dashboard" width="1200" height="750"
+                            loading="lazy" decoding="async">
+                        <span class="project-label">Web Application</span>
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-title">SEO Rank Tracker</h3>
+                        <p class="project-description">Advanced analytics dashboard for tracking search engine rankings,
+                            keyword performance, and competitor analysis.</p>
+                        <ul class="project-tags">
+                            <li class="tag">Typescript</li>
+                            <li class="tag">Javascript</li>
+                            <li class="tag">Talwind CSS</li>
+                            <li class="tag">Node.js</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="https://github.com/AyanQureshi16/SEO-Rank-Tracker-Website" target="_blank"
+                                rel="noopener noreferrer" class="project-link"
+                                aria-label="Source code for SEO Rank Tracker">
+                                <i class="fab fa-github" aria-hidden="true"></i><span>Code</span>
+                            </a>
+                            <span class="project-link is-disabled" aria-disabled="true">
+                                <i class="fas fa-hourglass-half" aria-hidden="true"></i><span>Demo soon</span>
+                            </span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 3. Final Year Project -->
+                <article class="glass-card project-card">
+                    <div class="project-media">
+                        <img src="./assets/projects/stockmaster-device-showcase-1200w.png"
+                            alt="Preview of the final year project web system" width="1200" height="750" loading="lazy"
+                            decoding="async">
+                        <span class="project-label">MERN Stack</span>
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-title">Final Year Project</h3>
+                        <p class="project-description">Comprehensive web system developed as a final year academic
+                            project, showcasing full-stack capabilities.</p>
+                        <ul class="project-tags">
+                            <li class="tag">MERN Stack</li>
+                            <li class="tag">Javascript</li>
+                            <li class="tag">Node.js</li>
+                            <li class="tag">MongoDB</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="https://github.com/AyanQureshi16/FYP-Final-Year-Project" target="_blank" rel="noopener noreferrer"
+                                class="project-link" aria-label="Source code for Final Year Project">
+                                <i class="fab fa-github" aria-hidden="true"></i><span>Code</span>
+                            </a>
+                            <span class="project-link is-disabled" aria-disabled="true">
+                                <i class="fas fa-hourglass-half" aria-hidden="true"></i><span>Demo soon</span>
+                            </span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 4. Modern E-Commerce -->
+                <article class="glass-card project-card">
+                    <div class="project-media">
+                        <img src="./assets/projects/E-commerce.jpg"
+                            alt="Preview of the Modern E-Commerce product catalog" width="1200" height="750"
+                            loading="lazy" decoding="async">
+                        <span class="project-label">E-Commerce</span>
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-title">Modern E-Commerce</h3>
+                        <p class="project-description">Fully responsive online store with dynamic product catalog, state
+                            management, and modern UI.</p>
+                        <ul class="project-tags">
+                            <li class="tag">HTML</li>
+                            <li class="tag">CSS</li>
+                            <li class="tag">Javascript</li>
+                            <li class="tag">Firebase</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="https://github.com/AyanQureshi16/E-commerce-Website" target="_blank"
+                                rel="noopener noreferrer" class="project-link"
+                                aria-label="Source code for Modern E-Commerce">
+                                <i class="fab fa-github" aria-hidden="true"></i><span>Code</span>
+                            </a>
+                            <a href="https://e-commerce-website-authentication.netlify.app/" target="_blank"
+                                rel="noopener noreferrer" class="project-link project-link-demo"
+                                aria-label="Live demo of Modern E-Commerce">
+                                <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i><span>Demo</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 5. Web Agency -->
+                <article class="glass-card project-card">
+                    <div class="project-media">
+                        <img src="./assets/projects/Web-Agency image.png"
+                            alt="Preview of the Web Agency marketing website" width="1200" height="750" loading="lazy"
+                            decoding="async">
+                        <span class="project-label">Business Website</span>
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-title">Web Agency</h3>
+                        <p class="project-description">Professional web agency website with hero section, services
+                            showcase, portfolio gallery, and contact form.</p>
+                        <ul class="project-tags">
+                            <li class="tag">HTML5</li>
+                            <li class="tag">CSS3</li>
+                            <li class="tag">Bootstrap</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="https://github.com/AyanQureshi16/Webagency-Template-Assignment-8" target="_blank"
+                                rel="noopener noreferrer" class="project-link" aria-label="Source code for Web Agency">
+                                <i class="fab fa-github" aria-hidden="true"></i><span>Code</span>
+                            </a>
+                            <a href="https://webagency-template.netlify.app/" target="_blank" rel="noopener noreferrer"
+                                class="project-link project-link-demo" aria-label="Live demo of Web Agency">
+                                <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i><span>Demo</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 6. GYM24 Fitness Center -->
+                <article class="glass-card project-card">
+                    <div class="project-media">
+                        <img src="./assets/projects/GYM-image.png" alt="Preview of the GYM24 Fitness Center website"
+                            width="1200" height="750" loading="lazy" decoding="async">
+                        <span class="project-label">Business Website</span>
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-title">GYM24 Fitness Center</h3>
+                        <p class="project-description">Complete gym website with membership plans, trainer profiles,
+                            feature sections, and responsive design.</p>
+                        <ul class="project-tags">
+                            <li class="tag">HTML5</li>
+                            <li class="tag">CSS3</li>
+                            <li class="tag">Bootstrap 5</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="https://github.com/AyanQureshi16/Hackaton-GYM-Website" target="_blank"
+                                rel="noopener noreferrer" class="project-link"
+                                aria-label="Source code for GYM24 Fitness Center">
+                                <i class="fab fa-github" aria-hidden="true"></i><span>Code</span>
+                            </a>
+                            <a href="https://hackaton-gym-website.netlify.app/" target="_blank"
+                                rel="noopener noreferrer" class="project-link project-link-demo"
+                                aria-label="Live demo of GYM24 Fitness Center">
+                                <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i><span>Demo</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 7. AA-Tech Shop -->
+                <article class="glass-card project-card">
+                    <div class="project-media">
+                        <img src="./assets/projects/AA-Tech-Shop.jpg"
+                            alt="Preview of the Figma Furniture store frontend" width="1200" height="750" loading="lazy"
+                            decoding="async">
+                        <span class="project-label">E-Commerce</span>
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-title">AA Tech Shop</h3>
+                        <p class="project-description">
+                            A fully responsive ecommerce store for phone cases and tech accessories, built with TanStack
+                            Start — featuring product browsing, categories, and WhatsApp-based checkout flow.</p>
+                        <ul class="project-tags">
+                            <li class="tag">Typescript</li>
+                            <li class="tag">Tailwind CSS</li>
+                            <li class="tag">Javascript</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="https://github.com/AyanQureshi16/aa-tech-demo-showcase" target="_blank"
+                                rel="noopener noreferrer" class="project-link"
+                                aria-label="Source code for Figma Furniture">
+                                <i class="fab fa-github" aria-hidden="true"></i><span>Code</span>
+                            </a>
+                            <a href="https://aa-tech-demo-showcase.vercel.app/" target="_blank"
+                                rel="noopener noreferrer" class="project-link project-link-demo"
+                                aria-label="Live demo of AA-Tech Shop">
+                                <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i><span>Demo</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 8. MERN Store -->
+                <article class="glass-card project-card">
+                    <div class="project-media">
+                        <img src="./assets/projects/Toyota-Corolla.jpg"
+                            alt="Preview of the MERN Store e-commerce platform" width="1200" height="750" loading="lazy"
+                            decoding="async">
+                        <span class="project-label">UI Implemention</span>
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-title">Toyota Website</h3>
+                        <p class="project-description">A pixel-perfect, fully responsive recreation of the Toyota
+                            website landing page, built using core HTML, CSS, and JavaScript to sharpen fundamentals in
+                            layout, responsiveness, and DOM interaction.</p>
+                        <ul class="project-tags">
+                            <li class="tag">HTML</li>
+                            <li class="tag">CSS</li>
+                            <li class="tag">JavaScript</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="https://github.com/AyanQureshi16/Toyota-Website-Assignment-6" target="_blank"
+                                rel="noopener noreferrer" class="project-link" aria-label="Source code for MERN Store">
+                                <i class="fab fa-github" aria-hidden="true"></i><span>Code</span>
+                            </a>
+                           <a href="https://automotive-dealership-template.netlify.app/" target="_blank"
+                                rel="noopener noreferrer" class="project-link project-link-demo"
+                                aria-label="Live demo of AA-Tech Shop">
+                                <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i><span>Demo</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
             </div>
-        </article>
+        </section>
 
-        <!-- YouTube Clone -->
-        <article class="project-card">
-            <div class="project-image">
-                <div
-                    style="width: 100%; height: 100%; background: linear-gradient(135deg, #FF0000 0%, #282828 100%); display: flex; align-items: center; justify-content: center;">
-                    <i class="fab fa-youtube" style="font-size: 120px; opacity: 0.3;" aria-hidden="true"></i>
-                </div>
-                <div class="project-overlay">
-                    <span class="project-label">Web Application</span>
-                    <h3 class="project-title">YouTube Clone</h3>
-                    <p class="project-description">A fully responsive YouTube interface clone featuring dynamic
-                        navigation, video cards, shorts section, and mobile menu functionality.</p>
-                    <div class="project-tags">
-                        <span class="tag">HTML5</span>
-                        <span class="tag">CSS3</span>
-                        <span class="tag">JavaScript</span>
-                        <span class="tag">Tailwind CSS</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://youtube-home-page-786.netlify.app/" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View YouTube Clone project live demo">
-                            <i class="fas fa-external-link-alt" aria-hidden="true"></i>
-                            <span>Live Demo</span>
-                        </a>
-                        <a href="https://github.com/AyanQureshi16/Youtube-Clone" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View YouTube Clone source code on GitHub">
-                            <i class="fab fa-github" aria-hidden="true"></i>
-                            <span>Source Code</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </article>
+        <!-- Certificates Section -->
+        <section id="certificates" class="section section-alt" aria-labelledby="certificates-heading">
+            <header class="section-head" data-reveal>
+                <p class="section-kicker">Credentials</p>
+                <h2 id="certificates-heading" class="section-title">Certificates</h2>
+                <p class="section-lead">Professional certifications and achievements</p>
+            </header>
 
-        <!-- Foodpanda Clone -->
-        <article class="project-card">
-            <div class="project-image">
-                <div
-                    style="width: 100%; height: 100%; background: linear-gradient(135deg, #e84141 0%, #c73030 100%); display: flex; align-items: center; justify-content: center;">
-                    <i class="fas fa-utensils" style="font-size: 120px; opacity: 0.3;" aria-hidden="true"></i>
-                </div>
-                <div class="project-overlay">
-                    <span class="project-label">E-Commerce Platform</span>
-                    <h3 class="project-title">Foodpanda Clone</h3>
-                    <p class="project-description">Complete food delivery website with hero section, restaurant cards,
-                        partner section, interactive FAQ accordion, and responsive footer.</p>
-                    <div class="project-tags">
-                        <span class="tag">HTML5</span>
-                        <span class="tag">CSS3</span>
-                        <span class="tag">JavaScript</span>
-                        <span class="tag">Tailwind CSS</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://foodpanda-home-page.netlify.app/" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View Foodpanda Clone project live demo">
-                            <i class="fas fa-external-link-alt" aria-hidden="true"></i>
-                            <span>Live Demo</span>
-                        </a>
-                        <a href="https://github.com/AyanQureshi16/Foodpanda-Clone" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View Foodpanda Clone source code on GitHub">
-                            <i class="fab fa-github" aria-hidden="true"></i>
-                            <span>Source Code</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </article>
-
-        <!-- Grok AI Clone -->
-        <article class="project-card">
-            <div class="project-image">
-                <div
-                    style="width: 100%; height: 100%; background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 50%, #EC4899 100%); display: flex; align-items: center; justify-content: center;">
-                    <i class="fas fa-robot" style="font-size: 120px; opacity: 0.3;" aria-hidden="true"></i>
-                </div>
-                <div class="project-overlay">
-                    <span class="project-label">AI Interface</span>
-                    <h3 class="project-title">Grok AI Assistant</h3>
-                    <p class="project-description">Modern AI assistant interface with chat functionality, feature cards,
-                        and elegant search experience. Clean and professional design.</p>
-                    <div class="project-tags">
-                        <span class="tag">HTML5</span>
-                        <span class="tag">CSS3</span>
-                        <span class="tag">JavaScript</span>
-                        <span class="tag">Tailwind CSS</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://grok-ai-assitant.netlify.app/" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View Grok AI Assistant project live demo">
-                            <i class="fas fa-external-link-alt" aria-hidden="true"></i>
-                            <span>Live Demo</span>
-                        </a>
-                        <a href="https://github.com/AyanQureshi16/Grok-Ai-Assitant" target="_blank" rel="noopener noreferrer"
-                            class="project-link" aria-label="View Grok AI Assistant source code on GitHub">
-                            <i class="fab fa-github" aria-hidden="true"></i>
-                            <span>Source Code</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </article>
-
-        <!-- Stopwatch Pro -->
-        <article class="project-card">
-            <div class="project-image">
-                <div
-                    style="width: 100%; height: 100%; background: linear-gradient(135deg, #1e1b4b 0%, #8b5cf6 100%); display: flex; align-items: center; justify-content: center;">
-                    <i class="fas fa-stopwatch" style="font-size: 120px; opacity: 0.3;" aria-hidden="true"></i>
-                </div>
-                <div class="project-overlay">
-                    <span class="project-label">Web Application</span>
-                    <h3 class="project-title">Ultra Pro Stopwatch</h3>
-                    <p class="project-description">Advanced stopwatch with lap timing, sound effects, achievements
-                        system, and keyboard shortcuts. Features animated particles and glassmorphic design.</p>
-                    <div class="project-tags">
-                        <span class="tag">HTML5</span>
-                        <span class="tag">CSS3</span>
-                        <span class="tag">JavaScript</span>
-                        <span class="tag">Web Audio API</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://stopwatch-pro-786.netlify.app/" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View Ultra Pro Stopwatch project live demo">
-                            <i class="fas fa-external-link-alt" aria-hidden="true"></i>
-                            <span>Live Demo</span>
-                        </a>
-                        <a href="https://github.com/AyanQureshi16/Stopwatch-Pro" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View Ultra Pro Stopwatch source code on GitHub">
-                            <i class="fab fa-github" aria-hidden="true"></i>
-                            <span>Source Code</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </article>
-
-        <!-- Audi Website Clone -->
-        <article class="project-card">
-            <div class="project-image">
-                <div
-                    style="width: 100%; height: 100%; background: linear-gradient(135deg, #000000 0%, #333333 100%); display: flex; align-items: center; justify-content: center;">
-                    <i class="fas fa-car-side" style="font-size: 120px; opacity: 0.3;" aria-hidden="true"></i>
-                </div>
-                <div class="project-overlay">
-                    <span class="project-label">Corporate Website</span>
-                    <h3 class="project-title">Audi Website Clone</h3>
-                    <p class="project-description">Luxury automotive brand website featuring hero sections, product
-                        cards, press releases, and comprehensive footer. Fully responsive with custom fonts.</p>
-                    <div class="project-tags">
-                        <span class="tag">HTML5</span>
-                        <span class="tag">CSS3</span>
-                        <span class="tag">Responsive Design</span>
-                        <span class="tag">Custom Fonts</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://audi-website-assignment-4.netlify.app/" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View Audi Website Clone project live demo">
-                            <i class="fas fa-external-link-alt" aria-hidden="true"></i>
-                            <span>Live Demo</span>
-                        </a>
-                        <a href="https://github.com/AyanQureshi16/audi-website-assignment-4" target="_blank" rel="noopener noreferrer"
-                            class="project-link" aria-label="View Audi Website Clone source code on GitHub">
-                            <i class="fab fa-github" aria-hidden="true"></i>
-                            <span>Source Code</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </article>
-
-        <!-- Digital Clock -->
-        <article class="project-card">
-            <div class="project-image">
-                <div
-                    style="width: 100%; height: 100%; background: linear-gradient(135deg, #9333ea 0%, #db2777 100%); display: flex; align-items: center; justify-content: center;">
-                    <i class="fas fa-clock" style="font-size: 120px; opacity: 0.3;" aria-hidden="true"></i>
-                </div>
-                <div class="project-overlay">
-                    <span class="project-label">Web Application</span>
-                    <h3 class="project-title">Digital Clock</h3>
-                    <p class="project-description">Beautiful digital clock with neon effects, glassmorphism design, and
-                        real-time date display. Features smooth animations and fully responsive layout.</p>
-                    <div class="project-tags">
-                        <span class="tag">HTML5</span>
-                        <span class="tag">CSS3</span>
-                        <span class="tag">JavaScript</span>
-                        <span class="tag">Tailwind CSS</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://digital-clock-1612.netlify.app/" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View Digital Clock project live demo">
-                            <i class="fas fa-external-link-alt" aria-hidden="true"></i>
-                            <span>Live Demo</span>
-                        </a>
-                        <a href="https://github.com/AyanQureshi16/Clock" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View Digital Clock source code on GitHub">
-                            <i class="fab fa-github" aria-hidden="true"></i>
-                            <span>Source Code</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </article>
-
-        <!-- GYM Website -->
-        <article class="project-card">
-            <div class="project-image">
-                <div
-                    style="width: 100%; height: 100%; background: linear-gradient(135deg, #000000 0%, #FFFF00 100%); display: flex; align-items: center; justify-content: center;">
-                    <i class="fas fa-dumbbell" style="font-size: 120px; opacity: 0.3;" aria-hidden="true"></i>
-                </div>
-                <div class="project-overlay">
-                    <span class="project-label">Business Website</span>
-                    <h3 class="project-title">GYM24 Fitness Center</h3>
-                    <p class="project-description">Complete gym website with membership plans, trainer profiles, feature
-                        sections, and responsive design. Built with Bootstrap framework.</p>
-                    <div class="project-tags">
-                        <span class="tag">HTML5</span>
-                        <span class="tag">CSS3</span>
-                        <span class="tag">Bootstrap 5</span>
-                        <span class="tag">Responsive</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://hackaton-gym-website.netlify.app/" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View GYM24 Fitness Center project live demo">
-                            <i class="fas fa-external-link-alt" aria-hidden="true"></i>
-                            <span>Live Demo</span>
-                        </a>
-                        <a href="https://github.com/AyanQureshi16/Hackaton-GYM-Website" target="_blank" rel="noopener noreferrer"
-                            class="project-link" aria-label="View GYM24 Fitness Center source code on GitHub">
-                            <i class="fab fa-github" aria-hidden="true"></i>
-                            <span>Source Code</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </article>
-    </section>
-
-    <section id="about" class="about-section" aria-labelledby="about-heading">
-        <div class="about-content">
-            <div class="about-text">
-                <h2 id="about-heading">About Me</h2>
-                <p>Hi, I'm Ayan Shahid, a passionate self-taught frontend developer from Pakistan. I started coding at a
-                    young age and fell in love with the process of turning ideas into real, functional websites.</p>
-                <p>I specialize in building responsive, user-friendly web experiences using modern technologies and best
-                    practices. Currently, I'm focused on learning advanced JavaScript concepts and exploring new
-                    frontend frameworks.</p>
-                <p>Every project I build is an opportunity to learn something new and push my skills further. I believe
-                    in writing clean, maintainable code and creating interfaces that users love to interact with.</p>
-            </div>
-            <div>
-                <div
-                    style="width: 100%; height: 500px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 120px; opacity: 0.7;">
-                    <i class="fas fa-code" aria-hidden="true"></i>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="contact-section" aria-labelledby="contact-heading">
-        <h2 id="contact-heading">Get In Touch</h2>
-        <p>Have a project in mind? Let's create something amazing together.</p>
-
-        <div style="max-width: 600px; margin: 0 auto 4rem;">
-            <form id="contactForm" style="text-align: left;">
-                <div style="margin-bottom: 1.5rem;">
-                    <label for="name"
-                        style="display: block; margin-bottom: 0.5rem; color: #999; font-size: 0.9rem; font-weight: 500;">Your
-                        Name</label>
-                    <input type="text" id="name" name="name" required aria-required="true"
-                        style="width: 100%; padding: 1rem; background: #1a1a1a; border: 1px solid #333; border-radius: 10px; color: #fff; font-size: 1rem; transition: all 0.3s ease;">
-                </div>
-
-                <div style="margin-bottom: 1.5rem;">
-                    <label for="email"
-                        style="display: block; margin-bottom: 0.5rem; color: #999; font-size: 0.9rem; font-weight: 500;">Your
-                        Email</label>
-                    <input type="email" id="email" name="email" required aria-required="true"
-                        style="width: 100%; padding: 1rem; background: #1a1a1a; border: 1px solid #333; border-radius: 10px; color: #fff; font-size: 1rem; transition: all 0.3s ease;">
-                </div>
-
-                <div style="margin-bottom: 1.5rem;">
-                    <label for="subject"
-                        style="display: block; margin-bottom: 0.5rem; color: #999; font-size: 0.9rem; font-weight: 500;">Subject</label>
-                    <input type="text" id="subject" name="subject" required aria-required="true"
-                        style="width: 100%; padding: 1rem; background: #1a1a1a; border: 1px solid #333; border-radius: 10px; color: #fff; font-size: 1rem; transition: all 0.3s ease;">
-                </div>
-
-                <div style="margin-bottom: 2rem;">
-                    <label for="message"
-                        style="display: block; margin-bottom: 0.5rem; color: #999; font-size: 0.9rem; font-weight: 500;">Your
-                        Message</label>
-                    <textarea id="message" name="message" required aria-required="true" rows="6"
-                        style="width: 100%; padding: 1rem; background: #1a1a1a; border: 1px solid #333; border-radius: 10px; color: #fff; font-size: 1rem; resize: vertical; transition: all 0.3s ease;"></textarea>
-                </div>
-
-                <button type="submit" aria-label="Send contact form message"
-                    style="width: 100%; padding: 1.25rem; background: #fff; color: #0a0a0a; border: none; border-radius: 50px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">
-                    Send Message
+            <!--
+                ===========================================================
+                TODO (Ayan): the three cards below are still PLACEHOLDERS.
+                For each one:
+                  1. drop your real scan/screenshot into
+                     ./assets/certificates/ and point the <img src> at it
+                     (update width/height to the real pixel size, and the
+                     alt text to the certificate name),
+                  2. replace the title, "Placeholder Issuer", and the date.
+                To add a fourth, fifth, … certificate just copy an <article>
+                block — the carousel measures its own contents, so the arrows
+                switch on by themselves as soon as the cards overflow one row.
+                ===========================================================
+            -->
+            <div class="cert-carousel">
+                <button class="cert-nav cert-nav-prev" id="certPrev" type="button" hidden
+                    aria-label="Show previous certificates" aria-controls="certTrack">
+                    <i class="fas fa-chevron-left" aria-hidden="true"></i>
                 </button>
-            </form>
-        </div>
 
-        <div style="margin: 4rem 0 2rem; padding-top: 3rem; border-top: 1px solid #333;">
-            <p style="font-size: 1rem; color: #999; margin-bottom: 2rem;">Or reach me directly</p>
-            <div class="contact-links">
-                <a href="mailto:ayanshahid1612@gmail.com" class="contact-link" aria-label="Send email to Ayan Shahid">
-                    <i class="fas fa-envelope" aria-hidden="true"></i>
-                    <span>ayanshahid1612@gmail.com</span>
-                </a>
-                <a href="https://github.com/ayanqureshi16" target="_blank" rel="noopener noreferrer" class="contact-link" aria-label="Visit Ayan Shahid GitHub profile">
-                    <i class="fab fa-github" aria-hidden="true"></i>
-                    <span>GitHub Profile</span>
-                </a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="contact-link" aria-label="Visit Ayan Shahid LinkedIn profile">
-                    <i class="fab fa-linkedin" aria-hidden="true"></i>
-                    <span>LinkedIn</span>
-                </a>
+                <div class="cert-track" id="certTrack" data-stagger tabindex="0" role="region"
+                    aria-label="Certificates, scrollable">
+                    <!-- <article class="glass-card certificate-card">
+                        <div class="certificate-image">
+                            <img src="./assets/certificates/"
+                                alt="MERN Stack Development certificate" width="1200" height="850" loading="lazy"
+                                decoding="async">
+                            <span class="certificate-badge" aria-hidden="true">
+                                <i class="fas fa-award"></i>
+                            </span>
+                        </div>
+                        <div class="certificate-content">
+                            <h3 class="certificate-title">MERN Stack Development</h3>
+                            <p class="certificate-issuer">Placeholder Issuer</p>
+                            <p class="certificate-date">2024</p>
+                        </div>
+                    </article> -->
+
+                    <!-- <article class="glass-card certificate-card">
+                        <div class="certificate-image">
+                            <img src="./assets/certificates/certificate-2.svg"
+                                alt="React.js Advanced Concepts certificate" width="1200" height="850" loading="lazy"
+                                decoding="async">
+                            <span class="certificate-badge" aria-hidden="true">
+                                <i class="fas fa-award"></i>
+                            </span>
+                        </div>
+                        <div class="certificate-content">
+                            <h3 class="certificate-title">React.js Advanced Concepts</h3>
+                            <p class="certificate-issuer">Placeholder Issuer</p>
+                            <p class="certificate-date">2023</p>
+                        </div>
+                    </article> -->
+
+                    <!-- <article class="glass-card certificate-card">
+                        <div class="certificate-image">
+                            <img src="./assets/certificates/certificate-3.svg"
+                                alt="Responsive Web Design certificate" width="1200" height="850" loading="lazy"
+                                decoding="async">
+                            <span class="certificate-badge" aria-hidden="true">
+                                <i class="fas fa-award"></i>
+                            </span>
+                        </div>
+                        <div class="certificate-content">
+                            <h3 class="certificate-title">Responsive Web Design</h3>
+                            <p class="certificate-issuer">Placeholder Issuer</p>
+                            <p class="certificate-date">2022</p>
+                        </div>
+                    </article> -->
+
+                    <article class="glass-card certificate-card">
+                        <div class="certificate-image">
+                            <img src="assets/certificates/certificate-js-essentials.jpg"
+                                alt="JavaScript Essentials 1 certificate" width="2584" height="1750" loading="lazy"
+                                decoding="async">
+                            <span class="certificate-badge" aria-hidden="true">
+                                <i class="fas fa-award"></i>
+                            </span>
+                        </div>
+                        <div class="certificate-content">
+                            <h3 class="certificate-title">JavaScript Essentials 1</h3>
+                            <p class="certificate-issuer">Cisco Networking Academy / JS Institute</p>
+                            <p class="certificate-date">Oct 2025</p>
+                        </div>
+                    </article>
+
+                    <article class="glass-card certificate-card">
+                        <div class="certificate-image">
+                            <img src="./assets/certificates/certificate-smit-hackathon.jpg"
+                                alt="SMIT Coding Night 2025 Hackathon certificate" width="2339" height="1654"
+                                loading="lazy" decoding="async">
+                            <span class="certificate-badge" aria-hidden="true">
+                                <i class="fas fa-award"></i>
+                            </span>
+                        </div>
+                        <div class="certificate-content">
+                            <h3 class="certificate-title">Coding Night 2025 (Hackathon)</h3>
+                            <p class="certificate-issuer">Saylani Mass Training Programme</p>
+                            <p class="certificate-date">2025</p>
+                        </div>
+                    </article>
+                </div>
+
+                <button class="cert-nav cert-nav-next" id="certNext" type="button" hidden
+                    aria-label="Show next certificates" aria-controls="certTrack">
+                    <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </button>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <footer role="contentinfo">
-        <p>© 2025 Ayan Shahid. Designed & Built with passion.</p>
+        <!-- About Section (the one pinned/scrubbed section, desktop only) -->
+        <section id="about" class="section about-section" aria-labelledby="about-heading">
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="section-kicker">Who I am</p>
+                    <h2 id="about-heading" class="section-title about-title">About Me</h2>
+                    <p class="about-para">Hi, I'm Ayan Shahid, a passionate self-taught frontend developer from
+                        Pakistan. I started coding at a young age and fell in love with the process of turning ideas
+                        into real, functional websites.</p>
+                    <p class="about-para">I specialize in building responsive, user-friendly web experiences using
+                        modern technologies and best practices. Currently, I'm focused on learning advanced JavaScript
+                        concepts and exploring new frontend frameworks.</p>
+                    <p class="about-para">Every project I build is an opportunity to learn something new and push my
+                        skills further. I believe in writing clean, maintainable code and creating interfaces that users
+                        love to interact with.</p>
+                    <a href="#contact" class="btn btn-primary about-cta">
+                        Let's work together
+                        <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+                <div class="about-media">
+                    <div class="about-media-glow" aria-hidden="true"></div>
+                    <img src="./assets/Ayan_Instagram_DP.jpg" alt="Portrait of Ayan Shahid" class="profile-image"
+                        width="640" height="640" loading="lazy" decoding="async">
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section section-alt contact-section" aria-labelledby="contact-heading">
+            <header class="section-head" data-reveal>
+                <p class="section-kicker">Contact</p>
+                <h2 id="contact-heading" class="section-title">Get In Touch</h2>
+                <p class="section-lead">Have a project in mind? Let's create something amazing together.</p>
+            </header>
+
+            <div class="contact-form-wrap glass-card">
+                <form id="contactForm" novalidate>
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" autocomplete="name" required aria-required="true">
+                        </div>
+                        <div class="form-field">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" name="email" autocomplete="email" required
+                                aria-required="true">
+                        </div>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required aria-required="true">
+                    </div>
+
+                    <div class="form-field">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" rows="6" required aria-required="true"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">
+                        Send Message
+                        <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                    </button>
+
+                    <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+                </form>
+            </div>
+
+            <div class="contact-direct">
+                <p class="contact-direct-label">Or reach me directly</p>
+                <div class="contact-links">
+                    <a href="mailto:ayanshahid1612@gmail.com" class="glass-card contact-link"
+                        aria-label="Send email to Ayan Shahid">
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                        <span>ayanshahid1612@gmail.com</span>
+                    </a>
+                    <a href="https://github.com/ayanqureshi16" target="_blank" rel="noopener noreferrer"
+                        class="glass-card contact-link" aria-label="Visit Ayan Shahid's GitHub profile">
+                        <i class="fab fa-github" aria-hidden="true"></i>
+                        <span>GitHub Profile</span>
+                    </a>
+                    <a href="https://www.instagram.com/ayanqureshi1256/" target="_blank" rel="noopener noreferrer"
+                        class="glass-card contact-link" aria-label="Visit Ayan Shahid's Instagram profile">
+                        <i class="fab fa-instagram" aria-hidden="true"></i>
+                        <span>Instagram</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Ayan Shahid. Designed &amp; Built with passion.</p>
+        <a href="#home" class="footer-top">Back to top <i class="fas fa-arrow-up" aria-hidden="true"></i></a>
     </footer>
 
-    <script src="app.js"></script>
+    <!-- GSAP 3.13 + plugins (all plugins are free as of 3.13) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/SplitText.min.js" defer></script>
+    <script src="app.js" defer></script>
+    <script src="motion.js" defer></script>
 </body>
 
 </html>

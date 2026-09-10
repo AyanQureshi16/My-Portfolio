@@ -1,296 +1,299 @@
-// Strict mode to catch errors early
+/* ==========================================================================
+   app.js — UI behaviour only.
+   All scroll-driven animation lives in motion.js (GSAP + ScrollTrigger).
+   Each concern is an isolated IIFE so a failure in one can't take out the rest.
+   ========================================================================== */
 'use strict';
 
-// Theme Toggle System
+/* --------------------------------------------------------------------------
+   Theme toggle
+   Dark is the default. Persisted under the "theme" key.
+   -------------------------------------------------------------------------- */
 (function () {
-    const themeToggle = document.getElementById('themeToggle');
-    const themeToggleNav = document.getElementById('themeToggleNav');
-    const themeIcon = document.getElementById('themeIcon');
-    const themeIconNav = document.getElementById('themeIconNav');
     const body = document.body;
+    const toggles = document.querySelectorAll('#themeToggle, #themeToggleNav');
+    const icons = document.querySelectorAll('#themeIcon, #themeIconNav');
 
-    // Get saved theme or default to dark
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-
-    // Apply theme on page load
-    function initTheme() {
-        if (savedTheme === 'light') {
-            body.classList.add('light-mode');
-            updateIcons(true);
-        } else {
-            body.classList.remove('light-mode');
-            updateIcons(false);
-        }
-    }
-
-    // Update both theme icons
     function updateIcons(isLight) {
-        const icons = [
-            { element: themeIcon, isLight: isLight },
-            { element: themeIconNav, isLight: isLight }
-        ];
-
-        icons.forEach(({ element, isLight }) => {
-            if (!element) return;
-
-            if (isLight) {
-                element.classList.remove('fa-moon');
-                element.classList.add('fa-sun');
-            } else {
-                element.classList.remove('fa-sun');
-                element.classList.add('fa-moon');
-            }
+        icons.forEach((icon) => {
+            icon.classList.toggle('fa-sun', isLight);
+            icon.classList.toggle('fa-moon', !isLight);
+        });
+        toggles.forEach((btn) => {
+            btn.setAttribute('aria-label', isLight ? 'Switch to dark theme' : 'Switch to light theme');
         });
     }
 
-    // Toggle theme function
-    function handleThemeToggle(e) {
-        if (e) {
-            e.preventDefault();
-            e.stopPropagation();
-        }
-
-        body.classList.toggle('light-mode');
-        const isLight = body.classList.contains('light-mode');
-
+    function applyTheme(theme) {
+        const isLight = theme === 'light';
+        body.classList.toggle('light-mode', isLight);
         updateIcons(isLight);
-        localStorage.setItem('theme', isLight ? 'light' : 'dark');
     }
 
-    // Initialize theme
-    initTheme();
+    function handleToggle(e) {
+        if (e) e.preventDefault();
+        const isLight = !body.classList.contains('light-mode');
+        applyTheme(isLight ? 'light' : 'dark');
 
-    // Add event listeners
-    if (themeToggle) {
-        themeToggle.addEventListener('click', handleThemeToggle, { passive: false });
+        try {
+            localStorage.setItem('theme', isLight ? 'light' : 'dark');
+        } catch (err) {
+            /* Private-mode / blocked storage: theme still applies for this visit. */
+        }
     }
 
-    if (themeToggleNav) {
-        themeToggleNav.addEventListener('click', handleThemeToggle, { passive: false });
+    let saved = 'dark';
+    try {
+        saved = localStorage.getItem('theme') || 'dark';
+    } catch (err) {
+        /* ignore */
     }
+
+    applyTheme(saved);
+    toggles.forEach((btn) => btn.addEventListener('click', handleToggle));
 })();
 
-// Cursor Effects
+/* --------------------------------------------------------------------------
+   Custom cursor
+   Hidden by CSS on coarse pointers, so bail out there instead of burning a
+   rAF loop for nothing.
+   -------------------------------------------------------------------------- */
 (function () {
-    const cursorDot = document.querySelector('.cursor-dot');
-    const cursorOutline = document.querySelector('.cursor-outline');
+    const dot = document.querySelector('.cursor-dot');
+    const outline = document.querySelector('.cursor-outline');
+    if (!dot || !outline) return;
+    if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-    if (!cursorDot || !cursorOutline) return;
-
-    let mouseX = 0, mouseY = 0;
-    let outlineX = 0, outlineY = 0;
+    let mouseX = 0;
+    let mouseY = 0;
+    let outlineX = 0;
+    let outlineY = 0;
 
     document.addEventListener('mousemove', (e) => {
         mouseX = e.clientX;
         mouseY = e.clientY;
-        cursorDot.style.left = mouseX + 'px';
-        cursorDot.style.top = mouseY + 'px';
-    });
+        dot.style.transform = `translate(${mouseX}px, ${mouseY}px) translate(-50%, -50%)`;
+    }, { passive: true });
 
-    function animateOutline() {
+    (function loop() {
         outlineX += (mouseX - outlineX) * 0.15;
         outlineY += (mouseY - outlineY) * 0.15;
-        cursorOutline.style.left = outlineX + 'px';
-        cursorOutline.style.top = outlineY + 'px';
-        requestAnimationFrame(animateOutline);
-    }
+        outline.style.transform = `translate(${outlineX}px, ${outlineY}px) translate(-50%, -50%)`;
+        requestAnimationFrame(loop);
+    })();
 
-    animateOutline();
-
-    // Hover effects
-    const hoverElements = document.querySelectorAll('a, button, .project-image');
-    hoverElements.forEach(el => {
-        el.addEventListener('mouseenter', () => {
-            cursorOutline.style.transform = 'translate(-50%, -50%) scale(1.5)';
-        });
-        el.addEventListener('mouseleave', () => {
-            cursorOutline.style.transform = 'translate(-50%, -50%) scale(1)';
-        });
+    // Class swap rather than an inline transform, so it can't fight the
+    // rAF-driven translate above.
+    document.querySelectorAll('a, button, .project-card').forEach((el) => {
+        el.addEventListener('mouseenter', () => outline.classList.add('is-hover'));
+        el.addEventListener('mouseleave', () => outline.classList.remove('is-hover'));
     });
 })();
 
-// Navigation Scroll Effect
+/* --------------------------------------------------------------------------
+   Mobile menu
+   The markup lives in index.html (it used to be built in JS, which is how the
+   mobile link set drifted out of sync with the desktop one). This just wires
+   it up.
+   -------------------------------------------------------------------------- */
+(function () {
+    const btn = document.getElementById('mobileMenuBtn');
+    const nav = document.getElementById('mobileNav');
+    if (!btn || !nav) return;
+
+    // Only reachable with JS, so it stays [hidden] until we take ownership.
+    nav.removeAttribute('hidden');
+
+    function setOpen(open) {
+        btn.classList.toggle('active', open);
+        nav.classList.toggle('active', open);
+        btn.setAttribute('aria-expanded', String(open));
+        btn.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
+    }
+
+    btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        setOpen(!nav.classList.contains('active'));
+    });
+
+    nav.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => setOpen(false));
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!nav.contains(e.target) && !btn.contains(e.target)) setOpen(false);
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && nav.classList.contains('active')) {
+            setOpen(false);
+            btn.focus();
+        }
+    });
+
+    // Close if the viewport grows past the breakpoint while the menu is open.
+    window.matchMedia('(min-width: 901px)').addEventListener('change', (e) => {
+        if (e.matches) setOpen(false);
+    });
+})();
+
+/* --------------------------------------------------------------------------
+   Anchor scrolling
+   Offsets for the fixed nav. The skip link is left to the browser so focus
+   actually lands on <main>.
+   -------------------------------------------------------------------------- */
 (function () {
     const nav = document.getElementById('nav');
-    if (!nav) return;
 
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 100) {
-            nav.classList.add('scrolled');
-        } else {
-            nav.classList.remove('scrolled');
-        }
-    });
-})();
-
-// Reveal on Scroll Animation
-(function () {
-    const projectCards = document.querySelectorAll('.project-card');
-    const skillCards = document.querySelectorAll('.skill-card');
-    const serviceCards = document.querySelectorAll('.service-card');
-
-    function revealOnScroll() {
-        const windowHeight = window.innerHeight;
-
-        projectCards.forEach(card => {
-            const cardTop = card.getBoundingClientRect().top;
-            if (cardTop < windowHeight - 100) {
-                card.classList.add('visible');
-            }
-        });
-
-        skillCards.forEach((card, index) => {
-            const cardTop = card.getBoundingClientRect().top;
-            if (cardTop < windowHeight - 50) {
-                setTimeout(() => {
-                    card.classList.add('visible');
-                }, index * 100);
-            }
-        });
-
-        serviceCards.forEach((card, index) => {
-            const cardTop = card.getBoundingClientRect().top;
-            if (cardTop < windowHeight - 50) {
-                setTimeout(() => {
-                    card.classList.add('visible');
-                }, index * 100);
-            }
-        });
-    }
-
-    window.addEventListener('scroll', revealOnScroll);
-    revealOnScroll();
-})();
-
-// Smooth Scroll for Anchor Links
-(function () {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    document.querySelectorAll('a[href^="#"]:not(.skip-link)').forEach((anchor) => {
         anchor.addEventListener('click', function (e) {
+            const hash = this.getAttribute('href');
+            if (!hash || hash === '#') return;
+
+            const target = document.querySelector(hash);
+            if (!target) return;
+
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-        });
-    });
-})();
+            const offset = (nav ? nav.offsetHeight : 0) + 12;
+            const top = target.getBoundingClientRect().top + window.scrollY - offset;
 
-// Contact Form Handler
-(function () {
-    const contactForm = document.getElementById('contactForm');
-    if (!contactForm) return;
-
-    contactForm.addEventListener('submit', function (e) {
-        e.preventDefault();
-
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const subject = document.getElementById('subject').value;
-        const message = document.getElementById('message').value;
-
-        const mailtoLink = `mailto:ayanshahid1612@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
-
-        window.location.href = mailtoLink;
-        this.reset();
-        alert('Thank you for your message! Your email client will open to send the message.');
-    });
-
-    // Form input focus effects
-    const formInputs = document.querySelectorAll('#contactForm input, #contactForm textarea');
-    formInputs.forEach(input => {
-        input.addEventListener('focus', function () {
-            this.style.borderColor = '#fff';
-            this.style.background = '#222';
-        });
-
-        input.addEventListener('blur', function () {
-            this.style.borderColor = '#333';
-            this.style.background = '#1a1a1a';
-        });
-    });
-
-    // Button hover effect
-    const submitBtn = document.querySelector('#contactForm button');
-    if (submitBtn) {
-        submitBtn.addEventListener('mouseenter', function () {
-            this.style.background = '#f0f0f0';
-            this.style.transform = 'translateY(-3px)';
-            this.style.boxShadow = '0 10px 30px rgba(255, 255, 255, 0.2)';
-        });
-
-        submitBtn.addEventListener('mouseleave', function () {
-            this.style.background = '#fff';
-            this.style.transform = 'translateY(0)';
-            this.style.boxShadow = 'none';
-        });
-    }
-})();
-
-// Mobile Menu System
-(function () {
-    function createMobileMenu() {
-        // Check if mobile menu already exists
-        if (document.querySelector('.mobile-menu-btn')) return;
-
-        const mobileMenuBtn = document.createElement('button');
-        mobileMenuBtn.className = 'mobile-menu-btn';
-        mobileMenuBtn.setAttribute('aria-label', 'Toggle mobile menu');
-        mobileMenuBtn.innerHTML = '<span></span><span></span><span></span>';
-        document.body.appendChild(mobileMenuBtn);
-
-        const mobileNav = document.createElement('div');
-        mobileNav.className = 'mobile-nav';
-        mobileNav.innerHTML = `
-            <a href="#home">Home</a>
-            <a href="#skills">Skills</a>
-            <a href="#services">Services</a>
-            <a href="#projects">Projects</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
-        `;
-        document.body.appendChild(mobileNav);
-
-        mobileMenuBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            mobileMenuBtn.classList.toggle('active');
-            mobileNav.classList.toggle('active');
-        });
-
-        mobileNav.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenuBtn.classList.remove('active');
-                mobileNav.classList.remove('active');
+            window.scrollTo({
+                top: Math.max(0, top),
+                behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
             });
         });
-
-        document.addEventListener('click', (e) => {
-            if (!mobileNav.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
-                mobileMenuBtn.classList.remove('active');
-                mobileNav.classList.remove('active');
-            }
-        });
-    }
-
-    function handleResize() {
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        if (window.innerWidth <= 768 && !mobileMenuBtn) {
-            createMobileMenu();
-        } else if (window.innerWidth > 768 && mobileMenuBtn) {
-            mobileMenuBtn.remove();
-            const mobileNav = document.querySelector('.mobile-nav');
-            if (mobileNav) mobileNav.remove();
-        }
-    }
-
-    // Initialize on load
-    if (window.innerWidth <= 768) {
-        createMobileMenu();
-    }
-
-    // Handle resize with debouncing
-    let resizeTimer;
-    window.addEventListener('resize', () => {
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(handleResize, 250);
     });
+})();
+
+/* --------------------------------------------------------------------------
+   Contact form
+   Hands off to the user's mail client and reports back through an
+   aria-live region instead of alert().
+   -------------------------------------------------------------------------- */
+(function () {
+    const form = document.getElementById('contactForm');
+    const status = document.getElementById('formStatus');
+    if (!form) return;
+
+    const EMAIL = 'ayanshahid1612@gmail.com';
+
+    function say(message, kind) {
+        if (!status) return;
+        status.textContent = message;
+        status.classList.toggle('is-ok', kind === 'ok');
+        status.classList.toggle('is-error', kind === 'error');
+    }
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        if (!form.checkValidity()) {
+            say('Please fill in every field with a valid value.', 'error');
+            const firstInvalid = form.querySelector(':invalid');
+            if (firstInvalid) firstInvalid.focus();
+            return;
+        }
+
+        const name = form.elements.name.value.trim();
+        const email = form.elements.email.value.trim();
+        const subject = form.elements.subject.value.trim();
+        const message = form.elements.message.value.trim();
+
+        const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+        window.location.href =
+            `mailto:${EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+        form.reset();
+        say('Thanks! Your email client should open with the message ready to send.', 'ok');
+    });
+
+    // Clear the status as soon as the user starts over.
+    form.addEventListener('input', () => {
+        if (status && status.textContent) say('', null);
+    });
+})();
+
+/* --------------------------------------------------------------------------
+   Certificates carousel
+   The track is a real scroll container with CSS scroll-snap, so dragging,
+   trackpad swipes, and arrow keys already work with zero JS. This adds the
+   two chevrons on top of that: they page by one card and, crucially, stay
+   hidden whenever the cards already fit — which is the case on desktop until
+   a fourth certificate is added.
+   -------------------------------------------------------------------------- */
+(function () {
+    const track = document.getElementById('certTrack');
+    const prev = document.getElementById('certPrev');
+    const next = document.getElementById('certNext');
+    if (!track || !prev || !next) return;
+
+    // 1px of slack: scrollLeft is fractional once the layout uses calc() widths,
+    // so an exact === comparison never reports "at the end".
+    const EPS = 1;
+
+    function step() {
+        const first = track.firstElementChild;
+        if (!first) return track.clientWidth;
+
+        const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+        return first.getBoundingClientRect().width + gap;
+    }
+
+    function overflows() {
+        return track.scrollWidth - track.clientWidth > EPS;
+    }
+
+    function sync() {
+        const scrollable = overflows();
+
+        // Hidden rather than just disabled: two permanently dead buttons
+        // flanking the section would read as broken, not as "nothing to page".
+        prev.hidden = !scrollable;
+        next.hidden = !scrollable;
+        if (!scrollable) return;
+
+        prev.disabled = track.scrollLeft <= EPS;
+        next.disabled = track.scrollLeft >= track.scrollWidth - track.clientWidth - EPS;
+    }
+
+    function page(direction) {
+        const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const from = track.scrollLeft;
+        const to = from + direction * step();
+
+        if (reduced) {
+            track.scrollTo({ left: to, behavior: 'instant' });
+            return;
+        }
+
+        track.scrollTo({ left: to, behavior: 'smooth' });
+
+        // Smooth scrolling on a scroll-snap container is silently a no-op in
+        // some engines (and in headless Chrome), which would leave the arrows
+        // looking dead. If nothing has moved by the time an animation would
+        // clearly be under way, jump instead. Movement, not arrival, is the
+        // test — a real smooth scroll is only part-way through at this point.
+        window.setTimeout(() => {
+            if (track.scrollLeft === from) {
+                track.scrollTo({ left: to, behavior: 'instant' });
+            }
+        }, 250);
+    }
+
+    prev.addEventListener('click', () => page(-1));
+    next.addEventListener('click', () => page(1));
+    track.addEventListener('scroll', sync, { passive: true });
+
+    // Card widths are percentages of the track, so every resize changes both
+    // the step and whether anything overflows at all.
+    if (window.ResizeObserver) {
+        new ResizeObserver(sync).observe(track);
+    } else {
+        window.addEventListener('resize', sync);
+    }
+
+    sync();
+    // Lazy-loaded images settle after first paint and can change scrollWidth.
+    window.addEventListener('load', sync);
 })();
